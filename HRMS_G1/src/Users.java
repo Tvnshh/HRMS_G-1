@@ -260,8 +260,7 @@ class PayrollOfficer extends Users {
 
 class Employee extends Users {
 
-    public void applyLeave(String leaveType, int duration, String date, String approvalStatus,
-            String employeeUsername) {
+    public void applyLeave(String leaveType, int duration, String date, String approvalStatus, String employeeUsername) {
         LeaveApplication newLeave = new LeaveApplication(leaveType, duration, date, approvalStatus, employeeUsername);
         newLeave.setLeaveDetails();
     }
@@ -866,7 +865,7 @@ class TimeAttendance {
         try (BufferedReader br = new BufferedReader(new FileReader(filepath))) {
             String line;
             while ((line = br.readLine()) != null) {
-                if (line.split(",")[0].equals(username) && line.split(",")[1].equals(date)) {
+                if (line.split(",")[0].equals(username) && line.split(",")[1].equals(getCurrentDate())) {
                     timeAttendanceDetails = line.split(",");
                     System.out.println("Found the username, and writing onto timeAttendanceDetails");
                 }
@@ -881,7 +880,7 @@ class TimeAttendance {
         System.out.println("Username in array before setting value: " + username);
         if (timeAttendanceDetails[0] == null) {
             timeAttendanceDetails[0] = username;
-            timeAttendanceDetails[1] = " ";
+            timeAttendanceDetails[1] = getCurrentDate();
             timeAttendanceDetails[2] = " ";
             timeAttendanceDetails[3] = " ";
             timeAttendanceDetails[4] = "1";
@@ -944,19 +943,22 @@ class TimeAttendance {
         for (int i = 0; i < timeAttendanceDetails.length; i++) {
             System.out.println(timeAttendanceDetails[i]);
         }
-
+        boolean userFound = false;
         for (int i = 0; i < timeAttendanceInfo.size(); i++) {
             String timeAttendance = timeAttendanceInfo.get(i);
-            if (timeAttendance.split(",")[0].equals(employeeUsername) && timeAttendance.split(",")[1].equals(date)) {
+            System.out.println("Username from the big list: "+ timeAttendance.split(",")[0].equals(employeeUsername));
+            System.out.println("Date from the big list: " + timeAttendance.split(",")[1].equals(date));
+            if (timeAttendance != null && (timeAttendance.split(",")[0].equals(employeeUsername) && timeAttendance.split(",")[1].equals(date))) {
                 timeAttendanceInfo.set(i, String.join(",", getTimeAttendanceDetails()));
                 System.out.println("setTimeAttendanceDetails, List look setting the detail according to username");
+                userFound = true;
                 break;
             } else {
-                timeAttendanceInfo.add(String.join(",", getTimeAttendanceDetails()));
-                System.out.println(
-                        "setTimeAttendanceDetails, List didnt find the username and date, so appending on to the list");
-                break;
+                System.out.println("setTimeAttendanceDetails, List didnt find the username and date, so appending on to the list");
             }
+        }
+        if (!userFound){
+            timeAttendanceInfo.add(String.join(",", getTimeAttendanceDetails()));
         }
         System.out.println(timeAttendanceInfo);
         try (FileWriter writer = new FileWriter("time_attendance.txt", false)) {
