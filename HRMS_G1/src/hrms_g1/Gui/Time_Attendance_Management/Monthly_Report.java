@@ -34,6 +34,7 @@ public class Monthly_Report extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextPane1 = new javax.swing.JTextPane();
         jLabel3 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -41,33 +42,47 @@ public class Monthly_Report extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jButton1.setBackground(new java.awt.Color(153, 255, 255));
         jButton1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("BACK");
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 75, -1));
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(153, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Total Attendance for current Month");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(109, 101, 243, -1));
 
+        jTextPane3.setBackground(new java.awt.Color(153, 153, 153));
+        jTextPane3.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        jTextPane3.setForeground(new java.awt.Color(0, 0, 0));
         jScrollPane3.setViewportView(jTextPane3);
 
         getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 136, 100, -1));
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(153, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Late Attendance");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(109, 197, 243, -1));
 
+        jTextPane1.setBackground(new java.awt.Color(153, 153, 153));
+        jTextPane1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        jTextPane1.setForeground(new java.awt.Color(0, 0, 0));
         jScrollPane1.setViewportView(jTextPane1);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(179, 232, 100, -1));
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(153, 204, 255));
         jLabel3.setText("Monthly Report");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 37, -1, -1));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Tarun Krishnan\\Downloads\\peakpx.jpg")); // NOI18N
+        jSeparator1.setForeground(new java.awt.Color(255, 255, 102));
+        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, 210, 20));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Tarun Krishnan\\Downloads\\backgroundimg_tk3.jpg")); // NOI18N
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 300));
 
         pack();
@@ -117,6 +132,7 @@ public class Monthly_Report extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextPane jTextPane1;
     private javax.swing.JTextPane jTextPane3;
     // End of variables declaration//GEN-END:variables
