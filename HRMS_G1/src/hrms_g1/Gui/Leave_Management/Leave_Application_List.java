@@ -68,7 +68,7 @@ public class Leave_Application_List extends javax.swing.JFrame {
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jButton2)
-                                .addGap(70, 70, 70)
+                                .addGap(127, 127, 127)
                                 .addComponent(jButton3)))))
                 .addGap(27, 52, Short.MAX_VALUE))
         );
