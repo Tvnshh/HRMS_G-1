@@ -26,18 +26,55 @@ public class Leave_Management_Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
+
+        jButton1.setBackground(new java.awt.Color(51, 0, 153));
+        jButton1.setForeground(new java.awt.Color(242, 242, 242));
+        jButton1.setText("Back");
+        getContentPane().add(jButton1);
+        jButton1.setBounds(6, 6, 72, 23);
+
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(242, 242, 242));
+        jLabel1.setText("Leave Management");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(290, 30, 160, 21);
+        getContentPane().add(jSeparator1);
+        jSeparator1.setBounds(260, 60, 220, 10);
+
+        jButton2.setBackground(new java.awt.Color(51, 0, 153));
+        jButton2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(242, 242, 242));
+        jButton2.setText("Apply Leave");
+        getContentPane().add(jButton2);
+        jButton2.setBounds(20, 110, 210, 180);
+
+        jButton3.setBackground(new java.awt.Color(51, 0, 153));
+        jButton3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(242, 242, 242));
+        jButton3.setText("Cancel Leave");
+        getContentPane().add(jButton3);
+        jButton3.setBounds(260, 110, 210, 180);
+
+        jButton4.setBackground(new java.awt.Color(51, 0, 153));
+        jButton4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(242, 242, 242));
+        jButton4.setText("Check Leave Status");
+        getContentPane().add(jButton4);
+        jButton4.setBounds(500, 110, 210, 180);
+
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\HD-wallpaper-splash-art-gradient-8k-abstract-gradient.jpg")); // NOI18N
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(0, -4, 810, 410);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -85,5 +122,12 @@ public class Leave_Management_Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
 }
