@@ -82,7 +82,7 @@ public class Monthly_Report extends javax.swing.JFrame {
         jSeparator1.setForeground(new java.awt.Color(255, 255, 102));
         getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, 210, 20));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Tarun Krishnan\\Downloads\\backgroundimg_tk3.jpg")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\images\\backgroundimg_tk3.jpg")); // NOI18N
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 300));
 
         pack();
