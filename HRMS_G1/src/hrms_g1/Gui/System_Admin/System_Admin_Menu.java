@@ -68,7 +68,7 @@ public class System_Admin_Menu extends javax.swing.JFrame {
         jSeparator1.setForeground(new java.awt.Color(255, 255, 51));
         getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, 210, 20));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Tarun Krishnan\\Downloads\\peakpx.jpg")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\images\\backgroundimg_tk4.jpg")); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 300));
 
         pack();
