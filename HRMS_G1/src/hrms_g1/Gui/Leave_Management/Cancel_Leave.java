@@ -43,78 +43,94 @@ public class Cancel_Leave extends javax.swing.JFrame {
         jTextPane4 = new javax.swing.JTextPane();
         jButton2 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(582, 328));
+        setPreferredSize(new java.awt.Dimension(582, 328));
+        setResizable(false);
         getContentPane().setLayout(null);
 
+        jButton1.setBackground(new java.awt.Color(153, 153, 153));
         jButton1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jButton1.setText("back");
+        jButton1.setText("BACK");
         getContentPane().add(jButton1);
         jButton1.setBounds(6, 15, 72, 22);
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel1.setText("Select Date : ");
+        jLabel1.setFont(new java.awt.Font("Bauhaus 93", 0, 14)); // NOI18N
+        jLabel1.setText("Select Date ");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(84, 67, 82, 15);
+        jLabel1.setBounds(180, 60, 90, 20);
 
+        jComboBox1.setBackground(new java.awt.Color(204, 204, 204));
         jComboBox1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         getContentPane().add(jComboBox1);
-        jComboBox1.setBounds(172, 67, 72, 21);
+        jComboBox1.setBounds(280, 60, 72, 21);
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel2.setText("Leave Type :");
+        jLabel2.setFont(new java.awt.Font("Bauhaus 93", 0, 14)); // NOI18N
+        jLabel2.setText("Leave Type ");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(83, 101, 70, 15);
+        jLabel2.setBounds(180, 100, 80, 20);
 
+        jTextPane1.setBackground(new java.awt.Color(153, 153, 153));
         jTextPane1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jScrollPane1.setViewportView(jTextPane1);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(174, 101, 140, 21);
+        jScrollPane1.setBounds(280, 90, 140, 21);
 
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel3.setText("Date :");
+        jLabel3.setFont(new java.awt.Font("Bauhaus 93", 0, 14)); // NOI18N
+        jLabel3.setText("Date ");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(122, 141, 34, 15);
+        jLabel3.setBounds(220, 135, 40, 20);
 
+        jTextPane2.setBackground(new java.awt.Color(153, 153, 153));
         jTextPane2.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jScrollPane2.setViewportView(jTextPane2);
 
         getContentPane().add(jScrollPane2);
-        jScrollPane2.setBounds(174, 141, 140, 21);
+        jScrollPane2.setBounds(280, 130, 140, 21);
 
-        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel4.setText("Duration :");
+        jLabel4.setFont(new java.awt.Font("Bauhaus 93", 0, 14)); // NOI18N
+        jLabel4.setText("Duration ");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(100, 185, 60, 20);
+        jLabel4.setBounds(200, 170, 70, 20);
 
+        jTextPane3.setBackground(new java.awt.Color(153, 153, 153));
         jTextPane3.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jScrollPane3.setViewportView(jTextPane3);
 
         getContentPane().add(jScrollPane3);
-        jScrollPane3.setBounds(174, 181, 140, 21);
+        jScrollPane3.setBounds(280, 170, 140, 21);
 
-        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel5.setText("Status :");
+        jLabel5.setFont(new java.awt.Font("Bauhaus 93", 0, 14)); // NOI18N
+        jLabel5.setText("Status ");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(110, 230, 40, 15);
+        jLabel5.setBounds(210, 220, 50, 15);
 
+        jTextPane4.setBackground(new java.awt.Color(153, 153, 153));
         jTextPane4.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jScrollPane4.setViewportView(jTextPane4);
 
         getContentPane().add(jScrollPane4);
-        jScrollPane4.setBounds(174, 221, 140, 21);
+        jScrollPane4.setBounds(280, 210, 140, 21);
 
+        jButton2.setBackground(new java.awt.Color(153, 153, 153));
         jButton2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jButton2.setText("Cancel ");
         getContentPane().add(jButton2);
-        jButton2.setBounds(201, 266, 72, 22);
+        jButton2.setBounds(250, 280, 72, 22);
 
-        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Bauhaus 93", 0, 24)); // NOI18N
         jLabel6.setText("Leave Cancellation");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(172, 0, 160, 21);
+        jLabel6.setBounds(172, 0, 220, 30);
+
+        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\yutheswaran\\Downloads\\beach 2.0.jpg")); // NOI18N
+        jLabel7.setText("jLabel7");
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(0, 0, 580, 330);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -164,6 +180,7 @@ public class Cancel_Leave extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
