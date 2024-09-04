@@ -72,7 +72,7 @@ public class Update_Account_Details extends javax.swing.JFrame {
         getContentPane().add(jLabel2);
         jLabel2.setBounds(280, 160, 50, 15);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Manager", "Officer", "Recruitment", "Specialist", "Clerk", "Intern", "Staff Member", "Trainee", "Junior Employee" }));
         getContentPane().add(jComboBox1);
         jComboBox1.setBounds(280, 180, 170, 22);
 
@@ -88,11 +88,11 @@ public class Update_Account_Details extends javax.swing.JFrame {
         getContentPane().add(jLabel4);
         jLabel4.setBounds(280, 260, 31, 15);
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "HR Department", "Payroll Department", "General Employee", " " }));
         getContentPane().add(jComboBox2);
         jComboBox2.setBounds(280, 230, 170, 22);
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Manager", "HR Officer", "Department Manager", "Employee", " " }));
         getContentPane().add(jComboBox3);
         jComboBox3.setBounds(280, 280, 170, 22);
 

@@ -148,19 +148,19 @@ public class Create_User_Account extends javax.swing.JFrame {
         getContentPane().add(jLabel8);
         jLabel8.setBounds(380, 210, 70, 15);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "HR Department", "Payroll Department", "General Employee", " ", " " }));
         getContentPane().add(jComboBox1);
-        jComboBox1.setBounds(380, 230, 72, 22);
+        jComboBox1.setBounds(380, 230, 136, 22);
 
         jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(242, 242, 242));
         jLabel9.setText("Position :");
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(500, 210, 50, 15);
+        jLabel9.setBounds(530, 210, 50, 15);
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Manager", "Officer", "Recruitment", "Specialist", "Clerk", "Intern", "Staff Member", "Trainee", "Junior Employee" }));
         getContentPane().add(jComboBox2);
-        jComboBox2.setBounds(500, 230, 72, 22);
+        jComboBox2.setBounds(530, 230, 121, 22);
         getContentPane().add(jSeparator3);
         jSeparator3.setBounds(100, 50, 530, 10);
 
