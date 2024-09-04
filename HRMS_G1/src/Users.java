@@ -48,9 +48,11 @@ public abstract class Users {
     }
 
     public static void main(String[] args) {
-        Employee emp = new Employee();
-        emp.clockOut("A0007");
-
+        //Employee emp = new Employee();
+        //emp.clockOut("A0007");
+        //emp.clockOut("A0007");
+        //EmployeeProfile profile = new EmployeeProfile("A0009");
+        //System.out.println(profile.getName());
         // TimeAttendance timeA = new TimeAttendance("A0007");
 
         // DepartmentManager hr = new DepartmentManager();
@@ -287,7 +289,7 @@ class Employee extends Users {
 
     public void clockOut(String employeeUsername) {
         TimeAttendance VerifyAttendance = new TimeAttendance(employeeUsername);
-        String date = TimeAttendance.getCurrentDate();
+        //String date = TimeAttendance.getCurrentDate();
         // String time = VerifyAttendance.getTime();
         // if
         // (!(VerifyAttendance.getEmployeeUsername().equals(employeeUsername)&&(VerifyAttendance.getDate().equals(date)))){
@@ -298,8 +300,22 @@ class Employee extends Users {
         VerifyAttendance.setTimeAttendanceDetails();
     }
 
-    public void monthlyReport(String username, String currentMonth) {
-        // Monthly_Report logic
+    public int[] monthlyReport(String username, String month) {
+        int[] attendanceInfo = {0, 0};
+        if (Integer.parseInt(month) < 10 && month.length() < 2){
+            month = "0"+month;
+        }
+        TimeAttendance Attendance = new TimeAttendance(username);
+        String[][] FileInfo = Attendance.getEmployeeAttendanceInfo();
+        for (String[] info : FileInfo) {
+            if (info[1].split("-")[1].equals(month)){
+                attendanceInfo[0] += 1;
+                if (info[4].equals("1")){
+                    attendanceInfo[1] += 1;
+                }
+            }
+        }
+        return attendanceInfo;
     }
 
     public void annualReport(String username, String currentYear) {
@@ -856,6 +872,8 @@ class TimeAttendance {
     private String timeOut;
     private int lateAttendance;
     private String[] timeAttendanceDetails = new String[5];
+    private String[][] employeeAttendanceInfo;
+    List<String[]> matchedDataList = new ArrayList<>();
 
     public TimeAttendance(String username) {
         System.out.println("-------------------");
@@ -869,8 +887,10 @@ class TimeAttendance {
                     timeAttendanceDetails = line.split(",");
                     System.out.println("Found the username, and writing onto timeAttendanceDetails");
                 }
-                timeAttendanceInfo.add(line);
-                System.out.println("Either way, writing onto timeAttendanceInfo");
+                if (line!=null){
+                    timeAttendanceInfo.add(line);
+                    System.out.println("Either way, writing onto timeAttendanceInfo");
+                }
             }
         } catch (FileNotFoundException ex) {
             Logger.getLogger(TimeAttendance.class.getName()).log(Level.SEVERE, null, ex);
@@ -893,6 +913,17 @@ class TimeAttendance {
         this.timeIn = timeAttendanceDetails[2];
         this.timeOut = timeAttendanceDetails[3];
         this.lateAttendance = Integer.parseInt(timeAttendanceDetails[4]);
+        
+
+        // Iterate through the list and split each string
+        for (String record : timeAttendanceInfo) {
+            String[] splitArray = record.split(",");
+            if (splitArray[0].equals(username)) {
+                matchedDataList.add(splitArray);
+            }
+        }
+        employeeAttendanceInfo = new String[matchedDataList.size()][];
+        matchedDataList.toArray(employeeAttendanceInfo);    
     }
 
     public void Clocking(String username, String Clock) {
@@ -946,9 +977,9 @@ class TimeAttendance {
         boolean userFound = false;
         for (int i = 0; i < timeAttendanceInfo.size(); i++) {
             String timeAttendance = timeAttendanceInfo.get(i);
-            System.out.println("Username from the big list: "+ timeAttendance.split(",")[0].equals(employeeUsername));
-            System.out.println("Date from the big list: " + timeAttendance.split(",")[1].equals(date));
-            if (timeAttendance != null && (timeAttendance.split(",")[0].equals(employeeUsername) && timeAttendance.split(",")[1].equals(date))) {
+            System.out.println("Username from the big list: "+ timeAttendance.split(",")[0] + timeAttendance.split(",")[0].equals(employeeUsername));
+            System.out.println("Date from the big list: " + timeAttendance.split(",")[1] + timeAttendance.split(",")[1].equals(date));
+            if (timeAttendance.split(",")[0].equals(employeeUsername) && timeAttendance.split(",")[1].equals(date)) {
                 timeAttendanceInfo.set(i, String.join(",", getTimeAttendanceDetails()));
                 System.out.println("setTimeAttendanceDetails, List look setting the detail according to username");
                 userFound = true;
@@ -969,7 +1000,12 @@ class TimeAttendance {
         } catch (IOException ex) {
             Logger.getLogger(TimeAttendance.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
     }
+    public String[][] getEmployeeAttendanceInfo() {
+        return employeeAttendanceInfo;
+    }
+
 
     public String getEmployeeUsername() {
         return employeeUsername;
