@@ -35,11 +35,12 @@ class EmployeeProfile {
     private String position;
     private String department;
     private String monthlyGSalary;
-    private String[] employeeInfo = new String[14];
+    private String[] employeeInfo = new String[15];
+    private String gender;
 
     public EmployeeProfile(int role, String employeeUsername, String employeePassword, int loginAttempts,
             int accountStatus, String name, String contact, String email, String address, String emergencyContact,
-            int workExperience, String position, String department, String monthlyGSalary) {
+            int workExperience, String position, String department, String monthlyGSalary, String gender) {
         this.role = role;
         this.employeeUsername = employeeUsername;
         this.employeePassword = employeePassword;
@@ -54,6 +55,7 @@ class EmployeeProfile {
         this.position = position;
         this.department = department;
         this.monthlyGSalary = monthlyGSalary;
+        this.gender = gender;
         System.out.println("Data given by user have been stored to the object variables, Ex: "+employeeUsername);
     }
 
@@ -196,6 +198,7 @@ class EmployeeProfile {
         employeeInfo[11] = this.position;
         employeeInfo[12] = this.department;
         employeeInfo[13] = this.monthlyGSalary;
+        employeeInfo[14] = this.gender;
         System.out.println("Data is now being stored to the employeeInfo list, Ex: "+ Arrays.toString(employeeInfo));
         return employeeInfo;
     }
@@ -255,6 +258,14 @@ class EmployeeProfile {
     public void setMonthlyGSalary(String monthlyGSalary) {
         this.monthlyGSalary = monthlyGSalary;
     }
+    
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
 
     public void setEmployeeInfo(String[] employeeInfo) {
         this.employeeInfo = employeeInfo;
@@ -272,7 +283,7 @@ class EmployeeProfile {
         this.position = employeeInfo[11];
         this.department = employeeInfo[12];
         this.monthlyGSalary = employeeInfo[13];
-
+        this.gender = employeeInfo[14];
     }
 
 }

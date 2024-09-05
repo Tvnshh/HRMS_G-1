@@ -32,6 +32,7 @@ public class Payroll_Officer_Menu extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel2 = new javax.swing.JLabel();
@@ -46,13 +47,13 @@ public class Payroll_Officer_Menu extends javax.swing.JFrame {
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(379, 8, -1, -1));
 
         jButton2.setFont(new java.awt.Font("Constantia", 0, 12)); // NOI18N
-        jButton2.setText("Profile Management");
+        jButton2.setText("Time Attendance Management");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, 160, 80));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, 200, 70));
 
         jButton3.setFont(new java.awt.Font("Constantia", 0, 12)); // NOI18N
         jButton3.setText("Leave Management ");
@@ -61,7 +62,7 @@ public class Payroll_Officer_Menu extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, 160, 80));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 180, 60));
 
         jButton4.setFont(new java.awt.Font("Constantia", 0, 12)); // NOI18N
         jButton4.setText("Payroll Management");
@@ -70,7 +71,16 @@ public class Payroll_Officer_Menu extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 180, 80));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 180, 70));
+
+        jButton5.setFont(new java.awt.Font("Constantia", 0, 12)); // NOI18N
+        jButton5.setText("Profile Management");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 180, 60));
 
         jLabel1.setFont(new java.awt.Font("Constantia", 0, 18)); // NOI18N
         jLabel1.setText("Payroll Officer Menu");
@@ -101,6 +111,11 @@ public class Payroll_Officer_Menu extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        new Time_Attendance_Management_Menu(username).setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton5ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -117,6 +132,7 @@ public class Payroll_Officer_Menu extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JSeparator jSeparator1;

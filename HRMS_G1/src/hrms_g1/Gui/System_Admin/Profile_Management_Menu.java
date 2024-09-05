@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package hrms_g1.Gui.System_Admin;
-import hrms_g1.Gui.Profile_Management.Create_User_Account;
+import hrms_g1.Gui.Profile_Management.Create_User_Account_Admin;
 import hrms_g1.Gui.Profile_Management.Search_User_Account;
 import hrms_g1.Gui.Profile_Management.Delete_User_Account;
 import hrms_g1.Gui.Profile_Management.Update_Account_Status;
@@ -65,24 +65,44 @@ public class Profile_Management_Menu extends javax.swing.JFrame {
         jButton2.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
         jButton2.setForeground(new java.awt.Color(153, 255, 255));
         jButton2.setText("Create User");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, 220, 31));
 
         jButton3.setBackground(new java.awt.Color(0, 0, 0));
         jButton3.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
         jButton3.setForeground(new java.awt.Color(153, 255, 255));
         jButton3.setText("Search Users");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 220, 31));
 
         jButton4.setBackground(new java.awt.Color(0, 0, 0));
         jButton4.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
         jButton4.setForeground(new java.awt.Color(153, 255, 255));
         jButton4.setText("Update Acc Status");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 220, 33));
 
         jButton5.setBackground(new java.awt.Color(0, 0, 0));
         jButton5.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
         jButton5.setForeground(new java.awt.Color(153, 255, 255));
         jButton5.setText("Delete User");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, 220, 31));
         getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 350, 20));
 
@@ -97,6 +117,26 @@ public class Profile_Management_Menu extends javax.swing.JFrame {
         new System_Admin_Menu(username).setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        new Create_User_Account_Admin(this, username).setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        new Search_User_Account(this, username).setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        new Delete_User_Account(this, username).setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        new Update_Account_Status(this, username).setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments

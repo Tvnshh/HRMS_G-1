@@ -57,10 +57,20 @@ public class Payroll_Management_Menu extends javax.swing.JFrame {
 
         jButton2.setFont(new java.awt.Font("Constantia", 0, 12)); // NOI18N
         jButton2.setText("Create Payroll");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, 160, 60));
 
         jButton3.setFont(new java.awt.Font("Constantia", 0, 12)); // NOI18N
         jButton3.setText("Generate Monthly Slip");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 160, 70));
 
         jButton4.setFont(new java.awt.Font("Constantia", 0, 12)); // NOI18N
@@ -74,6 +84,11 @@ public class Payroll_Management_Menu extends javax.swing.JFrame {
 
         jButton5.setFont(new java.awt.Font("Constantia", 0, 12)); // NOI18N
         jButton5.setText("Update Payroll");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 190, 170, 70));
 
         jLabel1.setFont(new java.awt.Font("Constantia", 0, 18)); // NOI18N
@@ -90,13 +105,29 @@ public class Payroll_Management_Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+        new Create_Payroll(this, username).setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         new Payroll_Officer_Menu(username).setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        new Create_Payroll(this, username).setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        new Generate_Monthly_Slip(this, username).setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        new Update_Payroll(this, username).setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments

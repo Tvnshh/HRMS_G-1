@@ -29,20 +29,20 @@ public class Delete_User_Account extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
+        backButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        searchBarUsername = new javax.swing.JTextField();
+        searchUsername = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextPane1 = new javax.swing.JTextPane();
+        getName = new javax.swing.JTextPane();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextPane2 = new javax.swing.JTextPane();
+        getPosition = new javax.swing.JTextPane();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTextPane3 = new javax.swing.JTextPane();
-        jButton3 = new javax.swing.JButton();
+        getDepartment = new javax.swing.JTextPane();
+        deleteButton = new javax.swing.JButton();
         jSeparator3 = new javax.swing.JSeparator();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel6 = new javax.swing.JLabel();
@@ -50,9 +50,14 @@ public class Delete_User_Account extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jButton1.setText("Back");
-        getContentPane().add(jButton1);
-        jButton1.setBounds(6, 17, 72, 23);
+        backButton.setText("Back");
+        backButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(backButton);
+        backButton.setBounds(6, 17, 72, 23);
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(242, 242, 242));
@@ -60,18 +65,17 @@ public class Delete_User_Account extends javax.swing.JFrame {
         getContentPane().add(jLabel1);
         jLabel1.setBounds(310, 20, 122, 21);
 
-        jTextField1.setText("jTextField1");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        searchBarUsername.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                searchBarUsernameActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1);
-        jTextField1.setBounds(290, 80, 73, 22);
+        getContentPane().add(searchBarUsername);
+        searchBarUsername.setBounds(290, 80, 64, 22);
 
-        jButton2.setText("jButton2");
-        getContentPane().add(jButton2);
-        jButton2.setBounds(380, 80, 75, 23);
+        searchUsername.setText("Search");
+        getContentPane().add(searchUsername);
+        searchUsername.setBounds(380, 80, 72, 23);
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(242, 242, 242));
@@ -91,29 +95,29 @@ public class Delete_User_Account extends javax.swing.JFrame {
         getContentPane().add(jLabel4);
         jLabel4.setBounds(300, 240, 70, 15);
 
-        jScrollPane1.setViewportView(jTextPane1);
+        jScrollPane1.setViewportView(getName);
 
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(300, 140, 153, 22);
 
-        jScrollPane2.setViewportView(jTextPane2);
+        jScrollPane2.setViewportView(getPosition);
 
         getContentPane().add(jScrollPane2);
         jScrollPane2.setBounds(300, 200, 153, 22);
 
-        jScrollPane3.setViewportView(jTextPane3);
+        jScrollPane3.setViewportView(getDepartment);
 
         getContentPane().add(jScrollPane3);
         jScrollPane3.setBounds(300, 260, 153, 22);
 
-        jButton3.setText("Delete");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        deleteButton.setText("Delete");
+        deleteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                deleteButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3);
-        jButton3.setBounds(330, 320, 72, 23);
+        getContentPane().add(deleteButton);
+        deleteButton.setBounds(330, 320, 72, 23);
         getContentPane().add(jSeparator3);
         jSeparator3.setBounds(170, 363, 400, 10);
         getContentPane().add(jSeparator1);
@@ -126,19 +130,26 @@ public class Delete_User_Account extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void searchBarUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBarUsernameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_searchBarUsernameActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_deleteButtonActionPerformed
+
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
+        this.setVisible(false);
+        previousWindow.setVisible(true);
+    }//GEN-LAST:event_backButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton backButton;
+    private javax.swing.JButton deleteButton;
+    private javax.swing.JTextPane getDepartment;
+    private javax.swing.JTextPane getName;
+    private javax.swing.JTextPane getPosition;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -149,9 +160,7 @@ public class Delete_User_Account extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextPane jTextPane1;
-    private javax.swing.JTextPane jTextPane2;
-    private javax.swing.JTextPane jTextPane3;
+    private javax.swing.JTextField searchBarUsername;
+    private javax.swing.JButton searchUsername;
     // End of variables declaration//GEN-END:variables
 }

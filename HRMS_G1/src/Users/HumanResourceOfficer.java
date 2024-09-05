@@ -12,9 +12,9 @@ import java.util.Arrays;
  */
 public class HumanResourceOfficer extends Users {
 
-    public void createEmployeeProfile(int role, String employeeUsername, String employeePassword, int loginAttempts, int accountStatus, String name, String contact, String email, String address, String emergencyContact, int workExperience, String position, String department, String monthlyGSalary) {
+    public void createEmployeeProfile(int role, String employeeUsername, String employeePassword, int loginAttempts, int accountStatus, String name, String contact, String email, String address, String emergencyContact, int workExperience, String position, String department, String monthlyGSalary, String gender) {
         EmployeeProfile newEmployee = new EmployeeProfile(employeeUsername);
-        String[] employeeInfo = {Integer.toString(role), employeeUsername, employeePassword,Integer.toString(loginAttempts), Integer.toString(accountStatus), name, contact, email, address, emergencyContact, Integer.toString(workExperience), position, department, monthlyGSalary };
+        String[] employeeInfo = {Integer.toString(role), employeeUsername, employeePassword,Integer.toString(loginAttempts), Integer.toString(accountStatus), name, contact, email, address, emergencyContact, Integer.toString(workExperience), position, department, monthlyGSalary, gender};
         newEmployee.setEmployeeInfo(employeeInfo);
         newEmployee.setEmployeeInfo();
     }

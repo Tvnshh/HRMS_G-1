@@ -24,7 +24,7 @@ public class SystemAdministrator extends Users {
     private List<String> employeeDetails = new ArrayList<>();
 
     public void createUser(int role, String employeeUsername, String employeePassword, String name) {
-        EmployeeProfile newEmployee = new EmployeeProfile(role, employeeUsername, employeePassword,/* loginattempt */ 0, 1, name, "0", "0", "0", "0", 0, "0", "0", "0");
+        EmployeeProfile newEmployee = new EmployeeProfile(role, employeeUsername, employeePassword,/* loginattempt */ 0, 1, name, "0", "0", "0", "0", 0, "0", "0", "0", "0");
         String[] employeeInfo = newEmployee.getEmployeeInfo();
         newEmployee.setEmployeeInfo(employeeInfo);
         newEmployee.setEmployeeInfo();

@@ -1,17 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package hrms_g1.Gui.Profile_Management;
-import Users.SystemAdministrator;
 import Users.HumanResourceOfficer;
 import javax.swing.JFrame;
 
-
-/**
- *
- * @author tvanm
- */
 public class Create_User_Account extends javax.swing.JFrame {
     private String username;
     private final JFrame previousWindow;  
@@ -21,7 +11,7 @@ public class Create_User_Account extends javax.swing.JFrame {
         this.username = username;
         initComponents();
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -32,30 +22,38 @@ public class Create_User_Account extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        backButton = new javax.swing.JButton();
+        createUserAccount = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        getUsername = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        getName = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        getEmail = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        getContact = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        getAddress = new javax.swing.JTextArea();
         jLabel8 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        getDepartment = new javax.swing.JComboBox<>();
         jLabel9 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        getPosition = new javax.swing.JComboBox<>();
         jSeparator3 = new javax.swing.JSeparator();
+        searchUsername = new javax.swing.JButton();
+        usernameSearch = new javax.swing.JTextField();
+        getEmergencyContact = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        getWorkExp = new javax.swing.JSpinner();
+        jLabel12 = new javax.swing.JLabel();
+        getGender = new javax.swing.JComboBox<>();
+        jLabel13 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(728, 410));
+        setPreferredSize(new java.awt.Dimension(728, 410));
         getContentPane().setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -64,147 +62,223 @@ public class Create_User_Account extends javax.swing.JFrame {
         getContentPane().add(jLabel1);
         jLabel1.setBounds(290, 10, 127, 44);
 
-        jButton1.setText("Back");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        backButton.setText("Back");
+        backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                backButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(10, 10, 72, 23);
+        getContentPane().add(backButton);
+        backButton.setBounds(6, 17, 72, 23);
 
-        jButton2.setText("Create");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        createUserAccount.setText("Create");
+        createUserAccount.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                createUserAccountActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2);
-        jButton2.setBounds(320, 360, 72, 23);
+        getContentPane().add(createUserAccount);
+        createUserAccount.setBounds(320, 370, 72, 23);
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Username :");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(100, 90, 60, 15);
-        getContentPane().add(jTextField1);
-        jTextField1.setBounds(100, 110, 210, 22);
+        jLabel2.setBounds(100, 110, 60, 15);
+        getContentPane().add(getUsername);
+        getUsername.setBounds(100, 130, 210, 22);
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(242, 242, 242));
         jLabel3.setText("Name :");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(100, 140, 50, 15);
+        jLabel3.setBounds(100, 160, 50, 15);
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        getName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                getNameActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField2);
-        jTextField2.setBounds(100, 160, 210, 22);
-
-        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(242, 242, 242));
-        jLabel4.setText("Password :");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(100, 190, 60, 15);
-
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jTextField3);
-        jTextField3.setBounds(100, 210, 210, 22);
+        getContentPane().add(getName);
+        getName.setBounds(100, 180, 210, 22);
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(242, 242, 242));
         jLabel5.setText("Email :");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(100, 240, 40, 15);
-        getContentPane().add(jTextField4);
-        jTextField4.setBounds(100, 260, 210, 22);
+        jLabel5.setBounds(100, 210, 40, 15);
+        getContentPane().add(getEmail);
+        getEmail.setBounds(100, 230, 210, 22);
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(242, 242, 242));
         jLabel6.setText("Contact :");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(100, 290, 50, 15);
-        getContentPane().add(jTextField5);
-        jTextField5.setBounds(100, 310, 210, 22);
+        jLabel6.setBounds(100, 260, 50, 15);
+        getContentPane().add(getContact);
+        getContact.setBounds(100, 280, 210, 22);
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(242, 242, 242));
         jLabel7.setText("Address :");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(380, 90, 50, 15);
+        jLabel7.setBounds(380, 110, 50, 15);
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        getAddress.setColumns(20);
+        getAddress.setRows(5);
+        jScrollPane1.setViewportView(getAddress);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(380, 110, 234, 86);
+        jScrollPane1.setBounds(380, 130, 234, 86);
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(242, 242, 242));
-        jLabel8.setText("Department :");
+        jLabel8.setText("Emergency Contact: ");
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(380, 210, 70, 15);
+        jLabel8.setBounds(100, 310, 140, 15);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "HR Department", "Payroll Department", "General Employee", " ", " " }));
-        getContentPane().add(jComboBox1);
-        jComboBox1.setBounds(380, 230, 137, 22);
+        getDepartment.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "HR Department", "Payroll Department", "General Employee" }));
+        getContentPane().add(getDepartment);
+        getDepartment.setBounds(380, 250, 136, 22);
 
         jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(242, 242, 242));
         jLabel9.setText("Position :");
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(530, 210, 50, 15);
+        jLabel9.setBounds(530, 230, 50, 15);
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Manager", "Officer", "Recruitment", "Specialist", "Clerk", "Intern", "Staff Member", "Trainee", "Junior Employee" }));
-        getContentPane().add(jComboBox2);
-        jComboBox2.setBounds(530, 230, 121, 22);
+        getPosition.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Manager", "Officer", "Recruitment", "Specialist", "Clerk", "Intern", "Staff Member", "Trainee", "Junior Employee" }));
+        getContentPane().add(getPosition);
+        getPosition.setBounds(530, 250, 121, 22);
         getContentPane().add(jSeparator3);
         jSeparator3.setBounds(100, 50, 530, 10);
 
+        searchUsername.setText("Search");
+        searchUsername.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchUsernameActionPerformed(evt);
+            }
+        });
+        getContentPane().add(searchUsername);
+        searchUsername.setBounds(360, 70, 72, 23);
+        getContentPane().add(usernameSearch);
+        usernameSearch.setBounds(260, 70, 80, 22);
+        getContentPane().add(getEmergencyContact);
+        getEmergencyContact.setBounds(100, 330, 210, 22);
+
+        jLabel11.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(242, 242, 242));
+        jLabel11.setText("Department :");
+        getContentPane().add(jLabel11);
+        jLabel11.setBounds(380, 230, 70, 15);
+        getContentPane().add(getWorkExp);
+        getWorkExp.setBounds(380, 300, 64, 22);
+
+        jLabel12.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(242, 242, 242));
+        jLabel12.setText("Gender");
+        getContentPane().add(jLabel12);
+        jLabel12.setBounds(530, 280, 70, 15);
+
+        getGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "M", "F" }));
+        getContentPane().add(getGender);
+        getGender.setBounds(530, 300, 72, 22);
+
+        jLabel13.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(242, 242, 242));
+        jLabel13.setText("Work Exp:");
+        getContentPane().add(jLabel13);
+        jLabel13.setBounds(380, 280, 70, 15);
+
         jLabel10.setIcon(new javax.swing.ImageIcon("C:\\images\\profile_management_km.jpg")); // NOI18N
         getContentPane().add(jLabel10);
-        jLabel10.setBounds(0, -4, 730, 410);
+        jLabel10.setBounds(0, -24, 730, 460);
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(530, 270, 10, 10);
+        jPanel1.setBounds(530, 290, 10, 10);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void createUserAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createUserAccountActionPerformed
+        HumanResourceOfficer hr = new HumanResourceOfficer();
+        String employeeUsername = getUsername.getText();
+        String name = getName.getText();
+        String contact = getContact.getText();
+        String email = getEmail.getText();
+        String address = getAddress.getText();
+        String position = getPosition.getSelectedItem().toString();
+        String department = getDepartment.getSelectedItem().toString();
+        String emergencyContact = getEmergencyContact.getText();
+        int workExperience = (int) getWorkExp.getValue();
+        String gender = getGender.getSelectedItem().toString();
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+        
+        int role = Integer.parseInt(hr.retrieveUserDetails(employeeUsername)[0]); // e.g., role could be a constant or set by the form
+        int loginAttempts = 0;
+        int accountStatus = Integer.parseInt(hr.retrieveUserDetails(employeeUsername)[4]); // e.g., 1 for active, 0 for inactive
+        String monthlyGSalary = "0"; // Example value
+        
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+        HumanResourceOfficer hrOfficer = new HumanResourceOfficer();
+        hrOfficer.createEmployeeProfile(role, employeeUsername, hr.retrieveUserDetails(employeeUsername)[2], loginAttempts, accountStatus, name, contact, email, address, emergencyContact, workExperience, position, department, monthlyGSalary, gender);
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+        javax.swing.JOptionPane.showMessageDialog(this, "User account created successfully!");
+        this.setVisible(false);
+        previousWindow.setVisible(true); 
+    }//GEN-LAST:event_createUserAccountActionPerformed
+
+    private void getNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_getNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_getNameActionPerformed
+
+    private void searchUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchUsernameActionPerformed
+        // Retrieve the username from the input field
+        HumanResourceOfficer hr = new HumanResourceOfficer();
+        String username = usernameSearch.getText();
+
+        // Call the method to retrieve user details, which returns an array
+        String[] userDetails = hr.retrieveUserDetails(username);
+
+        if (userDetails != null) {
+            getUsername.setText(userDetails[1]);
+            getName.setText(userDetails[5]);
+            getContact.setText(userDetails[6]);
+            getEmail.setText(userDetails[7]);
+            getAddress.setText(userDetails[8]);
+            getPosition.setSelectedItem(userDetails[11]); 
+            getDepartment.setSelectedItem(userDetails[12]);
+            getEmergencyContact.setText(userDetails[9]);
+        } else {
+            javax.swing.JOptionPane.showMessageDialog(this, "User not found!");
+        }
+    }//GEN-LAST:event_searchUsernameActionPerformed
+
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
+        this.setVisible(false);
+        previousWindow.setVisible(true);
+    }//GEN-LAST:event_backButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JButton backButton;
+    private javax.swing.JButton createUserAccount;
+    private javax.swing.JTextArea getAddress;
+    private javax.swing.JTextField getContact;
+    private javax.swing.JComboBox<String> getDepartment;
+    private javax.swing.JTextField getEmail;
+    private javax.swing.JTextField getEmergencyContact;
+    private javax.swing.JComboBox<String> getGender;
+    private javax.swing.JTextField getName;
+    private javax.swing.JComboBox<String> getPosition;
+    private javax.swing.JTextField getUsername;
+    private javax.swing.JSpinner getWorkExp;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -213,11 +287,7 @@ public class Create_User_Account extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
+    private javax.swing.JButton searchUsername;
+    private javax.swing.JTextField usernameSearch;
     // End of variables declaration//GEN-END:variables
 }

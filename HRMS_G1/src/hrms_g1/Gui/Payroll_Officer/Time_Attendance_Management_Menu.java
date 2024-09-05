@@ -2,7 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package hrms_g1.Gui.Employee;
+package hrms_g1.Gui.Payroll_Officer;
+import hrms_g1.Gui.Employee.*;
+import hrms_g1.Gui.Time_Attendance_Management.Annual_Report;
+import hrms_g1.Gui.Time_Attendance_Management.Monthly_Report;
 
 /**
  *
@@ -36,7 +39,6 @@ public class Time_Attendance_Management_Menu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(730, 410));
-        setPreferredSize(new java.awt.Dimension(730, 410));
         setResizable(false);
         getContentPane().setLayout(null);
 
@@ -63,6 +65,11 @@ public class Time_Attendance_Management_Menu extends javax.swing.JFrame {
         jButton3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButton3.setForeground(new java.awt.Color(242, 242, 242));
         jButton3.setText("Monthly Report");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton3);
         jButton3.setBounds(120, 100, 210, 180);
 
@@ -70,6 +77,11 @@ public class Time_Attendance_Management_Menu extends javax.swing.JFrame {
         jButton4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButton4.setForeground(new java.awt.Color(242, 242, 242));
         jButton4.setText("Annual Report");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton4);
         jButton4.setBounds(360, 100, 210, 180);
 
@@ -85,6 +97,16 @@ public class Time_Attendance_Management_Menu extends javax.swing.JFrame {
         Employee_Menu mainPage = new Employee_Menu(username);
         mainPage.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        new Monthly_Report(this, username).setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        new Annual_Report(this, username).setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
