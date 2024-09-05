@@ -3,17 +3,23 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package hrms_g1.Gui.Dep_Manager;
+import hrms_g1.Gui.Leave_Management.Apply_Leave;
+import hrms_g1.Gui.Leave_Management.Cancel_Leave;
+import hrms_g1.Gui.Leave_Management.Check_Leave_Status;
+import hrms_g1.Gui.Leave_Management.Leave_Application_List;
 
 /**
  *
  * @author tvanm
  */
 public class Leave_Management_Menu extends javax.swing.JFrame {
-
+    String username;
     /**
      * Creates new form Leave_Management
      */
-    public Leave_Management_Menu() {
+    public Leave_Management_Menu(String username) {
+        this.setTitle("Department Manager Leave Management");
+        this.username = username;
         initComponents();
     }
 
@@ -29,18 +35,26 @@ public class Leave_Management_Menu extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        applyLeave = new javax.swing.JButton();
+        cancelLeave = new javax.swing.JButton();
+        checkLeaveStatus = new javax.swing.JButton();
+        leaveApplicationList = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(730, 410));
+        setPreferredSize(new java.awt.Dimension(730, 410));
+        setResizable(false);
         getContentPane().setLayout(null);
 
         jButton1.setBackground(new java.awt.Color(255, 102, 102));
         jButton1.setForeground(new java.awt.Color(242, 242, 242));
         jButton1.setText("Back");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1);
         jButton1.setBounds(6, 6, 72, 23);
 
@@ -52,96 +66,99 @@ public class Leave_Management_Menu extends javax.swing.JFrame {
         getContentPane().add(jSeparator1);
         jSeparator1.setBounds(220, 50, 250, 10);
 
-        jButton2.setBackground(new java.awt.Color(255, 102, 102));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(242, 242, 242));
-        jButton2.setText("Apply Leave");
-        getContentPane().add(jButton2);
-        jButton2.setBounds(100, 80, 170, 140);
-
-        jButton3.setBackground(new java.awt.Color(255, 102, 102));
-        jButton3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(242, 242, 242));
-        jButton3.setText("Cancel Leave");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        applyLeave.setBackground(new java.awt.Color(255, 102, 102));
+        applyLeave.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        applyLeave.setForeground(new java.awt.Color(242, 242, 242));
+        applyLeave.setText("Apply Leave");
+        applyLeave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                applyLeaveActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3);
-        jButton3.setBounds(410, 80, 170, 140);
+        getContentPane().add(applyLeave);
+        applyLeave.setBounds(100, 80, 170, 140);
 
-        jButton4.setBackground(new java.awt.Color(255, 102, 102));
-        jButton4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(242, 242, 242));
-        jButton4.setText("Check Leave Status");
-        getContentPane().add(jButton4);
-        jButton4.setBounds(100, 240, 170, 140);
+        cancelLeave.setBackground(new java.awt.Color(255, 102, 102));
+        cancelLeave.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        cancelLeave.setForeground(new java.awt.Color(242, 242, 242));
+        cancelLeave.setText("Cancel Leave");
+        cancelLeave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelLeaveActionPerformed(evt);
+            }
+        });
+        getContentPane().add(cancelLeave);
+        cancelLeave.setBounds(410, 80, 170, 140);
 
-        jButton5.setBackground(new java.awt.Color(255, 102, 102));
-        jButton5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(242, 242, 242));
-        jButton5.setText("Leave Application List");
-        getContentPane().add(jButton5);
-        jButton5.setBounds(410, 240, 170, 140);
+        checkLeaveStatus.setBackground(new java.awt.Color(255, 102, 102));
+        checkLeaveStatus.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        checkLeaveStatus.setForeground(new java.awt.Color(242, 242, 242));
+        checkLeaveStatus.setText("Check Leave Status");
+        checkLeaveStatus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkLeaveStatusActionPerformed(evt);
+            }
+        });
+        getContentPane().add(checkLeaveStatus);
+        checkLeaveStatus.setBounds(100, 240, 170, 140);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\HD-wallpaper-natural-gradient.jpg")); // NOI18N
+        leaveApplicationList.setBackground(new java.awt.Color(255, 102, 102));
+        leaveApplicationList.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        leaveApplicationList.setForeground(new java.awt.Color(242, 242, 242));
+        leaveApplicationList.setText("Leave Application List");
+        leaveApplicationList.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                leaveApplicationListActionPerformed(evt);
+            }
+        });
+        getContentPane().add(leaveApplicationList);
+        leaveApplicationList.setBounds(410, 240, 170, 140);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\images\\dep_manager_km.jpg")); // NOI18N
         getContentPane().add(jLabel2);
         jLabel2.setBounds(0, 0, 730, 410);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void cancelLeaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelLeaveActionPerformed
+        new Cancel_Leave(this, username).setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_cancelLeaveActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Leave_Management_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Leave_Management_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Leave_Management_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Leave_Management_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        this.setVisible(false);
+        Dep_Manager_Menu mainPage = new Dep_Manager_Menu(username);
+        mainPage.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Leave_Management_Menu().setVisible(true);
-            }
-        });
-    }
+    private void applyLeaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_applyLeaveActionPerformed
+        new Apply_Leave(this, username).setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_applyLeaveActionPerformed
 
+    private void checkLeaveStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkLeaveStatusActionPerformed
+        new Check_Leave_Status(this, username).setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_checkLeaveStatusActionPerformed
+
+    private void leaveApplicationListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_leaveApplicationListActionPerformed
+        new Leave_Application_List(this, username).setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_leaveApplicationListActionPerformed
+
+//    public static void main(String args[]){
+//        new Leave_Management_Menu("Kieran Matthew").setVisible(true);
+//    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton applyLeave;
+    private javax.swing.JButton cancelLeave;
+    private javax.swing.JButton checkLeaveStatus;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JButton leaveApplicationList;
     // End of variables declaration//GEN-END:variables
 }

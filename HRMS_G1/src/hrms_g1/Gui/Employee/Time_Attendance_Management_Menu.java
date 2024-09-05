@@ -9,11 +9,12 @@ package hrms_g1.Gui.Employee;
  * @author tvanm
  */
 public class Time_Attendance_Management_Menu extends javax.swing.JFrame {
-
+    String username;
     /**
      * Creates new form Time_Attendance_Management
      */
-    public Time_Attendance_Management_Menu() {
+    public Time_Attendance_Management_Menu(String username) {
+        this.username = username;
         initComponents();
     }
 
@@ -29,17 +30,24 @@ public class Time_Attendance_Management_Menu extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(730, 410));
+        setPreferredSize(new java.awt.Dimension(730, 410));
+        setResizable(false);
         getContentPane().setLayout(null);
 
         jButton1.setBackground(new java.awt.Color(51, 0, 153));
         jButton1.setForeground(new java.awt.Color(242, 242, 242));
         jButton1.setText("Back");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1);
         jButton1.setBounds(6, 6, 72, 23);
 
@@ -51,73 +59,46 @@ public class Time_Attendance_Management_Menu extends javax.swing.JFrame {
         getContentPane().add(jSeparator1);
         jSeparator1.setBounds(210, 60, 300, 10);
 
-        jButton2.setBackground(new java.awt.Color(51, 0, 153));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(242, 242, 242));
-        jButton2.setText("Clock In / Clock Out");
-        getContentPane().add(jButton2);
-        jButton2.setBounds(10, 120, 210, 180);
-
         jButton3.setBackground(new java.awt.Color(51, 0, 153));
         jButton3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButton3.setForeground(new java.awt.Color(242, 242, 242));
         jButton3.setText("Monthly Report");
         getContentPane().add(jButton3);
-        jButton3.setBounds(250, 120, 210, 180);
+        jButton3.setBounds(120, 100, 210, 180);
 
         jButton4.setBackground(new java.awt.Color(51, 0, 153));
         jButton4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButton4.setForeground(new java.awt.Color(242, 242, 242));
         jButton4.setText("Annual Report");
         getContentPane().add(jButton4);
-        jButton4.setBounds(490, 120, 210, 180);
+        jButton4.setBounds(360, 100, 210, 180);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\HD-wallpaper-splash-art-gradient-8k-abstract-gradient.jpg")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\images\\employee_km.jpg")); // NOI18N
         getContentPane().add(jLabel3);
         jLabel3.setBounds(0, -4, 810, 410);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        this.setVisible(false);
+        Employee_Menu mainPage = new Employee_Menu(username);
+        mainPage.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Time_Attendance_Management_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Time_Attendance_Management_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Time_Attendance_Management_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Time_Attendance_Management_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Time_Attendance_Management_Menu().setVisible(true);
-            }
-        });
-    }
+//    public static void main(String args[]) {
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new Time_Attendance_Management_Menu().setVisible(true);
+//            }
+//        });
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;

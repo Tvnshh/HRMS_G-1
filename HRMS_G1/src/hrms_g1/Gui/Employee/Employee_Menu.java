@@ -9,11 +9,12 @@ package hrms_g1.Gui.Employee;
  * @author tvanm
  */
 public class Employee_Menu extends javax.swing.JFrame {
-
+    String username;
     /**
      * Creates new form Employee_Menu
      */
-    public Employee_Menu() {
+    public Employee_Menu(String username) {
+        this.username = username;
         initComponents();
     }
 
@@ -35,6 +36,9 @@ public class Employee_Menu extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(730, 410));
+        setPreferredSize(new java.awt.Dimension(730, 410));
+        setResizable(false);
         getContentPane().setLayout(null);
 
         jButton1.setBackground(new java.awt.Color(51, 0, 153));
@@ -65,14 +69,26 @@ public class Employee_Menu extends javax.swing.JFrame {
         jButton3.setBackground(new java.awt.Color(51, 0, 153));
         jButton3.setForeground(new java.awt.Color(242, 242, 242));
         jButton3.setText("Leave Managment");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton3);
         jButton3.setBounds(250, 120, 210, 180);
 
         jButton4.setBackground(new java.awt.Color(51, 0, 153));
         jButton4.setForeground(new java.awt.Color(242, 242, 242));
         jButton4.setText("Time Attendance");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton4);
         jButton4.setBounds(500, 120, 210, 180);
+
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\images\\employee_km.jpg")); // NOI18N
         getContentPane().add(jLabel3);
         jLabel3.setBounds(0, -4, 730, 410);
 
@@ -80,9 +96,22 @@ public class Employee_Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        Profile_Management_Menu newWindow = new Profile_Management_Menu();
+        Profile_Management_Menu newWindow = new Profile_Management_Menu(username);
+        this.setVisible(false);
         newWindow.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        Leave_Management_Menu newWindow = new Leave_Management_Menu(username);
+        this.setVisible(false);
+        newWindow.setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        Time_Attendance_Management_Menu newWindow = new Time_Attendance_Management_Menu(username);
+        this.setVisible(false);
+        newWindow.setVisible(true);
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -114,7 +143,7 @@ public class Employee_Menu extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Employee_Menu().setVisible(true);
+                new Employee_Menu("Kieran Matthew").setVisible(true);
             }
         });
     }

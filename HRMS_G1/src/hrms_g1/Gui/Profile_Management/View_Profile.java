@@ -3,17 +3,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package hrms_g1.Gui.Profile_Management;
+import Users.HumanResourceOfficer;
+import javax.swing.JFrame;
 
 /**
  *
  * @author tvanm
  */
 public class View_Profile extends javax.swing.JFrame {
-
-    /**
-     * Creates new form View_Profile
-     */
-    public View_Profile() {
+    private String username;
+    private final JFrame previousWindow;  
+    
+    public View_Profile(JFrame previousWindow, String username) {
+        this.previousWindow = previousWindow;
+        this.username = username;
         initComponents();
     }
 
@@ -60,7 +63,7 @@ public class View_Profile extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(242, 242, 242));
         jLabel1.setText("Username :");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(170, 90, 60, 15);
+        jLabel1.setBounds(170, 90, 61, 15);
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(242, 242, 242));
@@ -78,19 +81,19 @@ public class View_Profile extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(242, 242, 242));
         jLabel4.setText("Email :");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(170, 190, 38, 15);
+        jLabel4.setBounds(170, 190, 37, 15);
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(242, 242, 242));
         jLabel5.setText("Emergency Contact :");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(390, 190, 109, 15);
+        jLabel5.setBounds(390, 190, 110, 15);
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(242, 242, 242));
         jLabel6.setText("Address :");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(390, 240, 48, 15);
+        jLabel6.setBounds(390, 240, 51, 15);
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(242, 242, 242));
@@ -151,9 +154,9 @@ public class View_Profile extends javax.swing.JFrame {
         getContentPane().add(jLabel9);
         jLabel9.setBounds(320, 30, 90, 21);
 
-        jLabel11.setIcon(new javax.swing.ImageIcon("C:\\gradient-blue-pink-abstract-art-wallpaper-preview.jpg")); // NOI18N
+        jLabel11.setIcon(new javax.swing.ImageIcon("C:\\images\\profile_management_km.jpg")); // NOI18N
         getContentPane().add(jLabel11);
-        jLabel11.setBounds(0, -4, 728, 410);
+        jLabel11.setBounds(0, -4, 730, 410);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -170,40 +173,6 @@ public class View_Profile extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField4ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(View_Profile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(View_Profile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(View_Profile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(View_Profile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new View_Profile().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

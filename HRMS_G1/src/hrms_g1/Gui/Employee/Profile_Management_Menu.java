@@ -3,6 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package hrms_g1.Gui.Employee;
+import hrms_g1.Gui.Profile_Management.View_Profile;
+import hrms_g1.Gui.Profile_Management.Change_Password;
 
 
 /**
@@ -10,11 +12,12 @@ package hrms_g1.Gui.Employee;
  * @author tvanm
  */
 public class Profile_Management_Menu extends javax.swing.JFrame {
-
+    String username;
     /**
      * Creates new form Profile_Management
      */
-    public Profile_Management_Menu() {
+    public Profile_Management_Menu(String username) {
+        this.username = username;
         initComponents();
     }
 
@@ -35,11 +38,19 @@ public class Profile_Management_Menu extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(730, 410));
+        setResizable(false);
+        setSize(new java.awt.Dimension(730, 410));
         getContentPane().setLayout(null);
 
         jButton1.setBackground(new java.awt.Color(51, 0, 153));
         jButton1.setForeground(new java.awt.Color(242, 242, 242));
         jButton1.setText("Back");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1);
         jButton1.setBounds(6, 6, 72, 23);
 
@@ -65,50 +76,29 @@ public class Profile_Management_Menu extends javax.swing.JFrame {
         getContentPane().add(jButton3);
         jButton3.setBounds(410, 110, 250, 190);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\HD-wallpaper-splash-art-gradient-8k-abstract-gradient.jpg")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\images\\employee_km.jpg")); // NOI18N
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(0, -4, 810, 410);
+        jLabel3.setBounds(0, 0, 810, 410);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        this.setVisible(false);
+        Employee_Menu mainPage = new Employee_Menu(username);
+        mainPage.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Profile_Management_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Profile_Management_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Profile_Management_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Profile_Management_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Profile_Management_Menu().setVisible(true);
-            }
-        });
-    }
+//    public static void main(String args[]) {
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new Profile_Management_Menu("Kieran Matthew").setVisible(true);
+//            }
+//        });
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

@@ -9,11 +9,13 @@ package hrms_g1.Gui.Payroll_Officer;
  * @author tvanm
  */
 public class Payroll_Officer_Menu extends javax.swing.JFrame {
-
+    private String username;
     /**
      * Creates new form Payroll_Officer_Menu
      */
-    public Payroll_Officer_Menu() {
+    public Payroll_Officer_Menu(String username) {
+        this.username = username;
+        this.setTitle("Payroll Officer Menu");
         initComponents();
     }
 
@@ -54,6 +56,11 @@ public class Payroll_Officer_Menu extends javax.swing.JFrame {
 
         jButton3.setFont(new java.awt.Font("Constantia", 0, 12)); // NOI18N
         jButton3.setText("Leave Management ");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, 160, 80));
 
         jButton4.setFont(new java.awt.Font("Constantia", 0, 12)); // NOI18N
@@ -79,45 +86,28 @@ public class Payroll_Officer_Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        Profile_Management_Menu newWindow = new Profile_Management_Menu(username);
+        this.setVisible(false);
+        newWindow.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        Profile_Management_Menu newWindow = new Profile_Management_Menu();
-        newWindow.setVisible(true);
+        new Payroll_Management_Menu(username).setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        new Leave_Management_Menu(username).setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Payroll_Officer_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Payroll_Officer_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Payroll_Officer_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Payroll_Officer_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Payroll_Officer_Menu().setVisible(true);
+                new Payroll_Officer_Menu("Kieran Matthew").setVisible(true);
             }
         });
     }

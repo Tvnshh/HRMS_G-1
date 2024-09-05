@@ -3,17 +3,22 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package hrms_g1.Gui.HR_Officer;
+import hrms_g1.Gui.Leave_Management.Apply_Leave;
+import hrms_g1.Gui.Leave_Management.Cancel_Leave;
+import hrms_g1.Gui.Leave_Management.Check_Leave_Status;
 
 /**
  *
  * @author tvanm
  */
 public class Leave_Management_Menu extends javax.swing.JFrame {
-
+    private String username;
     /**
      * Creates new form Leave_Management
      */
-    public Leave_Management_Menu() {
+    public Leave_Management_Menu(String username) {
+        this.username = username;
+        this.setTitle("HR Officer Leave Management");
         initComponents();
     }
 
@@ -26,60 +31,88 @@ public class Leave_Management_Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(480, 300));
+        setPreferredSize(new java.awt.Dimension(480, 300));
+        setResizable(false);
+        getContentPane().setLayout(null);
+
+        jLabel1.setFont(new java.awt.Font("Bookman Old Style", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 51, 255));
+        jLabel1.setText("MANAGE LEAVE ");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(141, 6, 220, 29);
+
+        jButton1.setBackground(new java.awt.Color(0, 0, 0));
+        jButton1.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 0, 255));
+        jButton1.setText("Apply Leave ");
+        getContentPane().add(jButton1);
+        jButton1.setBounds(162, 88, 170, 29);
+
+        jButton2.setBackground(new java.awt.Color(0, 0, 0));
+        jButton2.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 51, 255));
+        jButton2.setText("Cancle Leave ");
+        getContentPane().add(jButton2);
+        jButton2.setBounds(162, 143, 170, 29);
+
+        jButton3.setBackground(new java.awt.Color(0, 0, 0));
+        jButton3.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 51, 255));
+        jButton3.setText("Leave Status ");
+        getContentPane().add(jButton3);
+        jButton3.setBounds(162, 198, 170, 29);
+
+        jButton4.setBackground(new java.awt.Color(102, 102, 102));
+        jButton4.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jButton4.setText("BACK");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton4);
+        jButton4.setBounds(20, 20, 72, 22);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\images\\purple.jpg")); // NOI18N
+        jLabel2.setText("jLabel2");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(-3, -4, 500, 310);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        new HR_Officer_Menu(username).setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton4ActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Leave_Management_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Leave_Management_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Leave_Management_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Leave_Management_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Leave_Management_Menu().setVisible(true);
-            }
-        });
-    }
+//    public static void main(String args[]) {
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new Leave_Management_Menu().setVisible(true);
+//            }
+//        });
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }

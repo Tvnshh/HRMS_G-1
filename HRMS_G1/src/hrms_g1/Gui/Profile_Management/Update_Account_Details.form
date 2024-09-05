@@ -39,6 +39,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="jTextField1"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField1ActionPerformed"/>
+      </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="210" y="70" width="-1" height="-1"/>
@@ -244,7 +247,7 @@
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\gradient-blue-pink-abstract-art-wallpaper-preview.jpg"/>
+          <Image iconType="2" name="C:\images\profile_management_km.jpg"/>
         </Property>
       </Properties>
       <Constraints>

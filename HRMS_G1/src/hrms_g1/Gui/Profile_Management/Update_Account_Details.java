@@ -3,17 +3,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package hrms_g1.Gui.Profile_Management;
+import Users.SystemAdministrator;
+import javax.swing.JFrame;
 
 /**
  *
  * @author tvanm
  */
 public class Update_Account_Details extends javax.swing.JFrame {
-
-    /**
-     * Creates new form Update_Account_Details
-     */
-    public Update_Account_Details() {
+    private String username;
+    private final JFrame previousWindow;  
+    
+    public Update_Account_Details(JFrame previousWindow, String username) {
+        this.previousWindow = previousWindow;
+        this.username = username;
         initComponents();
     }
 
@@ -52,8 +55,13 @@ public class Update_Account_Details extends javax.swing.JFrame {
         jButton1.setBounds(6, 17, 72, 23);
 
         jTextField1.setText("jTextField1");
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jTextField1);
-        jTextField1.setBounds(210, 70, 71, 22);
+        jTextField1.setBounds(210, 70, 73, 22);
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(242, 242, 242));
@@ -86,7 +94,7 @@ public class Update_Account_Details extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(242, 242, 242));
         jLabel4.setText("Role :");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(280, 260, 31, 15);
+        jLabel4.setBounds(280, 260, 32, 15);
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "HR Department", "Payroll Department", "General Employee", " " }));
         getContentPane().add(jComboBox2);
@@ -106,7 +114,7 @@ public class Update_Account_Details extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(242, 242, 242));
         jLabel5.setText("Update Account Details");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(270, 30, 184, 21);
+        jLabel5.setBounds(270, 30, 190, 21);
         getContentPane().add(jSeparator2);
         jSeparator2.setBounds(180, 360, 350, 10);
 
@@ -114,47 +122,17 @@ public class Update_Account_Details extends javax.swing.JFrame {
         getContentPane().add(jButton4);
         jButton4.setBounds(430, 70, 75, 23);
 
-        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\gradient-blue-pink-abstract-art-wallpaper-preview.jpg")); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\images\\profile_management_km.jpg")); // NOI18N
         getContentPane().add(jLabel6);
         jLabel6.setBounds(0, 0, 730, 410);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Update_Account_Details.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Update_Account_Details.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Update_Account_Details.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Update_Account_Details.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Update_Account_Details().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

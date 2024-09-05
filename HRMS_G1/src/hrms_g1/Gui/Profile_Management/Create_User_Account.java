@@ -3,17 +3,22 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package hrms_g1.Gui.Profile_Management;
+import Users.SystemAdministrator;
+import Users.HumanResourceOfficer;
+import javax.swing.JFrame;
+
 
 /**
  *
  * @author tvanm
  */
 public class Create_User_Account extends javax.swing.JFrame {
-
-    /**
-     * Creates new form Create_User_Account
-     */
-    public Create_User_Account() {
+    private String username;
+    private final JFrame previousWindow;  
+    
+    public Create_User_Account(JFrame previousWindow, String username) {
+        this.previousWindow = previousWindow;
+        this.username = username;
         initComponents();
     }
 
@@ -57,7 +62,7 @@ public class Create_User_Account extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Create Account");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(290, 10, 121, 44);
+        jLabel1.setBounds(290, 10, 127, 44);
 
         jButton1.setText("Back");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -150,7 +155,7 @@ public class Create_User_Account extends javax.swing.JFrame {
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "HR Department", "Payroll Department", "General Employee", " ", " " }));
         getContentPane().add(jComboBox1);
-        jComboBox1.setBounds(380, 230, 136, 22);
+        jComboBox1.setBounds(380, 230, 137, 22);
 
         jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(242, 242, 242));
@@ -164,7 +169,7 @@ public class Create_User_Account extends javax.swing.JFrame {
         getContentPane().add(jSeparator3);
         jSeparator3.setBounds(100, 50, 530, 10);
 
-        jLabel10.setIcon(new javax.swing.ImageIcon("C:\\gradient-blue-pink-abstract-art-wallpaper-preview.jpg")); // NOI18N
+        jLabel10.setIcon(new javax.swing.ImageIcon("C:\\images\\profile_management_km.jpg")); // NOI18N
         getContentPane().add(jLabel10);
         jLabel10.setBounds(0, -4, 730, 410);
         getContentPane().add(jPanel1);
@@ -189,40 +194,6 @@ public class Create_User_Account extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField3ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Create_User_Account.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Create_User_Account.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Create_User_Account.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Create_User_Account.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Create_User_Account().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

@@ -3,17 +3,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package hrms_g1.Gui.Profile_Management;
+import Users.SystemAdministrator;
+import javax.swing.JFrame;
 
 /**
  *
  * @author tvanm
  */
 public class Delete_User_Account extends javax.swing.JFrame {
-
-    /**
-     * Creates new form Delete_User_Account
-     */
-    public Delete_User_Account() {
+    private String username;
+    private final JFrame previousWindow;  
+    
+    public Delete_User_Account(JFrame previousWindow, String username) {
+        this.previousWindow = previousWindow;
+        this.username = username;
         initComponents();
     }
 
@@ -55,7 +58,7 @@ public class Delete_User_Account extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(242, 242, 242));
         jLabel1.setText("Delete Account");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(310, 20, 118, 21);
+        jLabel1.setBounds(310, 20, 122, 21);
 
         jTextField1.setText("jTextField1");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -64,7 +67,7 @@ public class Delete_User_Account extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextField1);
-        jTextField1.setBounds(290, 80, 71, 22);
+        jTextField1.setBounds(290, 80, 73, 22);
 
         jButton2.setText("jButton2");
         getContentPane().add(jButton2);
@@ -116,7 +119,7 @@ public class Delete_User_Account extends javax.swing.JFrame {
         getContentPane().add(jSeparator1);
         jSeparator1.setBounds(180, 50, 370, 10);
 
-        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\gradient-blue-pink-abstract-art-wallpaper-preview.jpg")); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\images\\profile_management_km.jpg")); // NOI18N
         getContentPane().add(jLabel6);
         jLabel6.setBounds(-2, -4, 740, 410);
 
@@ -131,40 +134,6 @@ public class Delete_User_Account extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Delete_User_Account.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Delete_User_Account.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Delete_User_Account.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Delete_User_Account.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Delete_User_Account().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

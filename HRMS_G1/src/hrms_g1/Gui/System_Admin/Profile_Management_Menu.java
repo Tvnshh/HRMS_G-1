@@ -3,18 +3,25 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package hrms_g1.Gui.System_Admin;
-
-
+import hrms_g1.Gui.Profile_Management.Create_User_Account;
+import hrms_g1.Gui.Profile_Management.Search_User_Account;
+import hrms_g1.Gui.Profile_Management.Delete_User_Account;
+import hrms_g1.Gui.Profile_Management.Update_Account_Status;
+import hrms_g1.Gui.Profile_Management.Update_Account_Details;
+import hrms_g1.Gui.Profile_Management.View_Profile;
+import hrms_g1.Gui.Profile_Management.Change_Password;
 /**
  *
  * @author tvanm
  */
 public class Profile_Management_Menu extends javax.swing.JFrame {
-
+    private String username;
     /**
      * Creates new form Profile_Management
      */
-    public Profile_Management_Menu() {
+    public Profile_Management_Menu(String username) {
+        this.setTitle("System Admin Profile Management");
+        this.username = username;
         initComponents();
     }
 
@@ -47,6 +54,11 @@ public class Profile_Management_Menu extends javax.swing.JFrame {
 
         jButton1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jButton1.setText("BACK");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 75, -1));
 
         jButton2.setBackground(new java.awt.Color(0, 0, 0));
@@ -64,13 +76,13 @@ public class Profile_Management_Menu extends javax.swing.JFrame {
         jButton4.setBackground(new java.awt.Color(0, 0, 0));
         jButton4.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
         jButton4.setForeground(new java.awt.Color(153, 255, 255));
-        jButton4.setText("Update User Details");
+        jButton4.setText("Update Acc Status");
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 220, 33));
 
         jButton5.setBackground(new java.awt.Color(0, 0, 0));
         jButton5.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
         jButton5.setForeground(new java.awt.Color(153, 255, 255));
-        jButton5.setText("View Profile");
+        jButton5.setText("Delete User");
         getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, 220, 31));
         getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 350, 20));
 
@@ -81,43 +93,21 @@ public class Profile_Management_Menu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        new System_Admin_Menu(username).setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Profile_Management_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Profile_Management_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Profile_Management_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Profile_Management_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Profile_Management_Menu().setVisible(true);
-            }
-        });
-    }
+//    public static void main(String args[]) {
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new Profile_Management_Menu().setVisible(true);
+//            }
+//        });
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

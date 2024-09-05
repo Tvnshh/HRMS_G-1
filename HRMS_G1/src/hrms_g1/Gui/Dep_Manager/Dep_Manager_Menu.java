@@ -3,17 +3,24 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package hrms_g1.Gui.Dep_Manager;
+import hrms_g1.Gui.Leave_Management.Apply_Leave;
+import hrms_g1.Gui.Leave_Management.Apply_Leave;
+import hrms_g1.Gui.Leave_Management.Apply_Leave;
+import hrms_g1.Gui.Leave_Management.Apply_Leave;
 
 /**
  *
  * @author tvanm
  */
 public class Dep_Manager_Menu extends javax.swing.JFrame {
-
+    String username;
     /**
      * Creates new form Dep_Manager_Menu
+     * @param username for user methods
      */
-    public Dep_Manager_Menu() {
+    public Dep_Manager_Menu(String username) {
+        this.setTitle("Department Manager Menu");
+        this.username = username;
         initComponents();
     }
 
@@ -35,6 +42,9 @@ public class Dep_Manager_Menu extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(730, 410));
+        setPreferredSize(new java.awt.Dimension(730, 410));
+        setResizable(false);
         setSize(new java.awt.Dimension(500, 400));
         getContentPane().setLayout(null);
 
@@ -85,9 +95,15 @@ public class Dep_Manager_Menu extends javax.swing.JFrame {
         jButton4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButton4.setForeground(new java.awt.Color(242, 242, 242));
         jButton4.setText("Time Attendance");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton4);
         jButton4.setBounds(490, 110, 210, 180);
 
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\images\\dep_manager_km.jpg")); // NOI18N
         jLabel2.setPreferredSize(new java.awt.Dimension(500, 400));
         getContentPane().add(jLabel2);
         jLabel2.setBounds(0, 0, 730, 410);
@@ -100,50 +116,27 @@ public class Dep_Manager_Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        Profile_Management_Menu newWindow = new Profile_Management_Menu();
+        Profile_Management_Menu newWindow = new Profile_Management_Menu(username);
         newWindow.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        Leave_Management_Menu newWindow = new Leave_Management_Menu();
+        Leave_Management_Menu newWindow = new Leave_Management_Menu(username);
         newWindow.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Dep_Manager_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Dep_Manager_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Dep_Manager_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Dep_Manager_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        Time_Attendance_Management_Menu newWindow = new Time_Attendance_Management_Menu(username);
+        newWindow.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton4ActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Dep_Manager_Menu().setVisible(true);
-            }
-        });
+    public static void main(String args[]){
+        new Dep_Manager_Menu("Kieran Matthew").setVisible(true);
     }
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;

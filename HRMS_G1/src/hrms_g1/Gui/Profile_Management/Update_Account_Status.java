@@ -3,17 +3,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package hrms_g1.Gui.Profile_Management;
+import Users.SystemAdministrator;
+import javax.swing.JFrame;
 
 /**
  *
  * @author tvanm
  */
 public class Update_Account_Status extends javax.swing.JFrame {
-
-    /**
-     * Creates new form Update_Account_Status
-     */
-    public Update_Account_Status() {
+    private String username;
+    private final JFrame previousWindow;  
+    
+    public Update_Account_Status(JFrame previousWindow, String username) {
+        this.previousWindow = previousWindow;
+        this.username = username;
         initComponents();
     }
 
@@ -58,7 +61,7 @@ public class Update_Account_Status extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextField1);
-        jTextField1.setBounds(210, 80, 71, 22);
+        jTextField1.setBounds(210, 80, 73, 22);
 
         jButton2.setText("jButton2");
         getContentPane().add(jButton2);
@@ -93,9 +96,9 @@ public class Update_Account_Status extends javax.swing.JFrame {
         getContentPane().add(jSeparator2);
         jSeparator2.setBounds(190, 340, 310, 10);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\gradient-blue-pink-abstract-art-wallpaper-preview.jpg")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\images\\profile_management_km.jpg")); // NOI18N
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(0, -4, 728, 410);
+        jLabel4.setBounds(0, -4, 730, 410);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -108,40 +111,6 @@ public class Update_Account_Status extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Update_Account_Status.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Update_Account_Status.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Update_Account_Status.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Update_Account_Status.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Update_Account_Status().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
