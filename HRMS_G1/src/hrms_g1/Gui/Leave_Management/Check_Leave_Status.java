@@ -26,6 +26,7 @@ public class Check_Leave_Status extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel6 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
@@ -41,75 +42,92 @@ public class Check_Leave_Status extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTextPane4 = new javax.swing.JTextPane();
+        jLabel8 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+
+        jLabel6.setText("jLabel6");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(484, 300));
+        setResizable(false);
         getContentPane().setLayout(null);
 
+        jButton1.setBackground(new java.awt.Color(153, 153, 153));
         jButton1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jButton1.setText("back ");
+        jButton1.setText("BACK");
         getContentPane().add(jButton1);
-        jButton1.setBounds(6, 6, 60, 22);
+        jButton1.setBounds(6, 6, 70, 22);
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel1.setText("Select Date : ");
+        jLabel1.setFont(new java.awt.Font("Bauhaus 93", 0, 18)); // NOI18N
+        jLabel1.setText("Select Date ");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(110, 55, 71, 30);
+        jLabel1.setBounds(120, 50, 130, 40);
 
+        jComboBox1.setBackground(new java.awt.Color(204, 204, 204));
         jComboBox1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         getContentPane().add(jComboBox1);
-        jComboBox1.setBounds(198, 61, 72, 21);
+        jComboBox1.setBounds(250, 60, 72, 21);
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel2.setText("Leave Type : ");
+        jLabel2.setFont(new java.awt.Font("Bauhaus 93", 0, 18)); // NOI18N
+        jLabel2.setText("Leave Type ");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(110, 100, 80, 15);
+        jLabel2.setBounds(120, 100, 120, 28);
 
+        jTextPane1.setBackground(new java.awt.Color(153, 153, 153));
         jTextPane1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jScrollPane1.setViewportView(jTextPane1);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(201, 100, 115, 21);
+        jScrollPane1.setBounds(250, 100, 115, 21);
 
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel3.setText("Date : ");
+        jLabel3.setFont(new java.awt.Font("Bauhaus 93", 0, 18)); // NOI18N
+        jLabel3.setText("Date ");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(148, 139, 35, 15);
+        jLabel3.setBounds(170, 140, 70, 28);
 
+        jTextPane2.setBackground(new java.awt.Color(153, 153, 153));
         jTextPane2.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jScrollPane2.setViewportView(jTextPane2);
 
         getContentPane().add(jScrollPane2);
-        jScrollPane2.setBounds(201, 139, 115, 21);
+        jScrollPane2.setBounds(250, 140, 115, 21);
 
-        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel4.setText("Duration : ");
+        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel4.setFont(new java.awt.Font("Bauhaus 93", 0, 18)); // NOI18N
+        jLabel4.setText("Duration ");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(127, 178, 56, 15);
+        jLabel4.setBounds(140, 170, 90, 28);
 
+        jTextPane3.setBackground(new java.awt.Color(153, 153, 153));
         jTextPane3.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jScrollPane3.setViewportView(jTextPane3);
 
         getContentPane().add(jScrollPane3);
-        jScrollPane3.setBounds(201, 178, 115, 21);
+        jScrollPane3.setBounds(250, 180, 115, 20);
 
-        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel5.setText("Status : ");
+        jLabel5.setFont(new java.awt.Font("Bauhaus 93", 0, 18)); // NOI18N
+        jLabel5.setText("Status ");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(141, 226, 42, 15);
+        jLabel5.setBounds(160, 220, 80, 30);
 
+        jTextPane4.setBackground(new java.awt.Color(153, 153, 153));
         jTextPane4.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jScrollPane4.setViewportView(jTextPane4);
 
         getContentPane().add(jScrollPane4);
-        jScrollPane4.setBounds(201, 226, 115, 21);
+        jScrollPane4.setBounds(250, 220, 115, 21);
 
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\yutheswaran\\Downloads\\Colour_lol.jpg")); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Bauhaus 93", 0, 24)); // NOI18N
+        jLabel8.setText("Leave Status");
+        getContentPane().add(jLabel8);
+        jLabel8.setBounds(180, 10, 130, 20);
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\yutheswaran\\Downloads\\beach 2.0.jpg")); // NOI18N
         jLabel7.setText("jLabel7");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(-23, -24, 500, 320);
+        jLabel7.setBounds(0, -40, 510, 340);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -157,7 +175,9 @@ public class Check_Leave_Status extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;

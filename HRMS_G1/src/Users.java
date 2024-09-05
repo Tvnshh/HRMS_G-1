@@ -11,11 +11,12 @@ import java.util.List;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.LocalTime;
+import java.text.DecimalFormat;
 
-//helloooo
+//Hello Miss, hope you like our project
 
 public abstract class Users {
-
+    
     public Users() {
     }
 
@@ -46,8 +47,92 @@ public abstract class Users {
         employee.setEmployeePassword(newPassword);
         employee.setEmployeeInfo();
     }
+    public String[] viewProfile(String username){
+        EmployeeProfile Profile = new EmployeeProfile(username);
+        return Profile.getEmployeeInfo();
+    }
 
     public static void main(String[] args) {
+        //Testing
+//        SystemAdministrator testObj = new SystemAdministrator();
+        
+//        testObj.createUser(2, "Tarun Krishnan", "1234", "Tarun"); //Works
+
+//        String[] testArray = testObj.retrieveUserDetails("Tarun Krishnan");
+//        System.out.println(Arrays.toString(testArray)); //Works
+
+//        testObj.deleteUserAccount("A0006");//Works
+
+//        String[] testArray = testObj.retrieveUserDetails("Tarun Krishnan");
+//        testArray[2] = "123"; //Works
+//        testObj.updateAccountDetails(testArray);
+
+//        testObj.updateAccountStatus("Tarun Krishnan", 0);//Works
+                
+//        HumanResourceOfficer testObj = new HumanResourceOfficer();
+        
+//        testObj.createEmployeeProfile(3, "A0009", "GOAT NO 1", 0, 1, "Kuthire Savari", "0128820192", "tkri05@gmail.com", "Jalan Klang, Penang", "999", 3, "Officer", "Payroll", "5000");
+//        Works
+
+//        String[] testArray = testObj.retrieveUserDetails("Tarun Krishnan");
+//        System.out.println(Arrays.toString(testArray)); //Works
+
+//        String[] testArray = testObj.retrieveUserDetails("Tarun Krishnan");
+//        testArray[2] = "123"; //Works
+//        testObj.updateEmployeeProfile(testArray);
+
+//        testObj.applyLeave("Annual", 3, "02-02-2024", "pending", "Tarun Krishnan");//Works
+
+//        testObj.cancelLeave("Tarun Krishnan", "02-02-2024");//Works
+
+//        System.out.println(testObj.checkLeaveStatus("A0008", "01-07-2023"));//Works
+//                
+//        DepartmentManager testObj = new DepartmentManager();
+        
+//        System.out.println(Arrays.deepToString(testObj.leaveApplicationList()));//Works
+
+//        testObj.approveLeave("A0008", "01-07-2023");//Works
+
+//        testObj.rejectLeave("A0009", "01-07-2023");//Works
+
+//        testObj.applyLeave("Annual", 3, "02-02-2024", "pending", "Tarun Krishnan");//Works
+
+//        testObj.cancelLeave("Tarun Krishnan", "02-02-2024");//Works
+
+//        testObj.checkLeaveStatus(String username, String date);//Works
+//                
+//        PayrollOfficer testObj = new PayrollOfficer();
+
+//        testObj.createPayroll("Vevalakshan", 2800);
+
+//        System.out.println(Arrays.toString(testObj.getPayrollDataMonth("Vevalakshan", "09")));//Works
+
+//        testObj.updatePayroll("Yuthes", "09", 28000);//Works
+
+//        testObj.applyLeave("Annual", 3, "02-02-2024", "pending", "Tarun Krishnan");//Works
+
+//        testObj.cancelLeave("Tarun Krishnan", "02-02-2024");//Works
+
+//        testObj.checkLeaveStatus(String username, String date);//Works
+//        
+//        Employee testObj = new Employee();
+        
+//        testObj.clockIn("Vevalakshan");
+
+//        testObj.clockOut("Vevalakshan");
+
+//        System.out.println(Arrays.toString(testObj.monthlyReport("A0007", "09")));
+
+//        System.out.println(Arrays.toString(testObj.annualReport("Vevalakshan", "2024")));
+
+//        testObj.applyLeave("Annual", 3, "02-02-2024", "pending", "Tarun Krishnan");//Works
+
+//        testObj.cancelLeave("Tarun Krishnan", "02-02-2024");//Works
+
+//        testObj.checkLeaveStatus(String username, String date);//Works
+
+        
+
         //Employee emp = new Employee();
         //emp.clockOut("A0007");
         //emp.clockOut("A0007");
@@ -65,35 +150,23 @@ public abstract class Users {
         // "em", "addd", "emarg", 1, "a", "b", "c");
     }
 
-    public String getUsername() {
-        return username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
 }
-// SystemAdministrator admin = new SystemAdministrator();
-// admin.createUser(role, employeeUsername, employeePassword, loginAttempts,
-// accountStatus, name, contact, email, address, emergencyContact,
-// workExperience, position, department, monthlyGSalary)
-
 class SystemAdministrator extends Users {
     private List<String> employeeDetails = new ArrayList<>();
 
     public void createUser(int role, String employeeUsername, String employeePassword, String name) {
-        EmployeeProfile newEmployee = new EmployeeProfile(role, employeeUsername, employeePassword,
-                /* loginattempt */ 0, 1, name, " ", " ", " ", " ", 0, " ", " ", " ");
+        EmployeeProfile newEmployee = new EmployeeProfile(role, employeeUsername, employeePassword,/* loginattempt */ 0, 1, name, "0", "0", "0", "0", 0, "0", "0", "0");
+        String[] employeeInfo = newEmployee.getEmployeeInfo();
+        newEmployee.setEmployeeInfo(employeeInfo);
         newEmployee.setEmployeeInfo();
     }
 
-    public String[] retrieveUserDetails(String username) {
-        EmployeeProfile employee = new EmployeeProfile(username);
+    public String[] retrieveUserDetails(String employeeUsername) {
+        EmployeeProfile employee = new EmployeeProfile(employeeUsername);
         return employee.getEmployeeInfo();
     }
 
-    public void deleteUserAccount(String username) {
+    public void deleteUserAccount(String employeeUsername) {
         // EmployeeProfile employee = new EmployeeProfile(username);
         // String[] employeeInfo = new String[14];
         String filepath = "user_profile.txt";
@@ -109,7 +182,7 @@ class SystemAdministrator extends Users {
         }
         try (FileWriter writer = new FileWriter(filepath, false)) {
             for (String employee : employeeDetails) {
-                if (!(employee.split(",")[1].equals(username))) {
+                if (!(employee.split(",")[1].equals(employeeUsername))) {
                     writer.write(employee + "\n");
                 }
             }
@@ -118,57 +191,52 @@ class SystemAdministrator extends Users {
         }
     }
 
-    public String[] searchUserAccount(String username) {
-        EmployeeProfile employee = new EmployeeProfile(username);
-        return employee.getEmployeeInfo();
-    }
-
     public void updateAccountDetails(String[] employeeInfo) {
-        EmployeeProfile employee = new EmployeeProfile(employeeInfo[0]);
+        System.out.println("Array Data: " + Arrays.toString(employeeInfo));
+        EmployeeProfile employee = new EmployeeProfile(employeeInfo[1]);
         employee.setEmployeeInfo(employeeInfo);
         employee.setEmployeeInfo();
     }
 
-    public void updateAccountStatus(String username, String accountStatus) {
-        EmployeeProfile employee = new EmployeeProfile(username);
+    public void updateAccountStatus(String employeeUsername, int accountStatus) {
+        EmployeeProfile employee = new EmployeeProfile(employeeUsername);
+        employee.setAccountStatus(accountStatus);
+        String []employeeInfo = employee.getEmployeeInfo();
+        employee.setEmployeeInfo(employeeInfo);
         employee.setEmployeeInfo();
     }
 }
 
 class HumanResourceOfficer extends Users {
 
-    public void createEmployeeProfile(int role, String employeeUsername, String employeePassword, int loginAttempts,
-            int accountStatus, String name, String contact, String email, String address, String emergencyContact,
-            int workExperience, String position, String department, String monthlyGSalary) {
+    public void createEmployeeProfile(int role, String employeeUsername, String employeePassword, int loginAttempts, int accountStatus, String name, String contact, String email, String address, String emergencyContact, int workExperience, String position, String department, String monthlyGSalary) {
         EmployeeProfile newEmployee = new EmployeeProfile(employeeUsername);
-        String[] employeeInfo = { Integer.toString(role), employeeUsername, employeePassword,
-                Integer.toString(loginAttempts), Integer.toString(accountStatus), name, contact, email, address,
-                emergencyContact, Integer.toString(workExperience), position, department, monthlyGSalary };
+        String[] employeeInfo = {Integer.toString(role), employeeUsername, employeePassword,Integer.toString(loginAttempts), Integer.toString(accountStatus), name, contact, email, address, emergencyContact, Integer.toString(workExperience), position, department, monthlyGSalary };
         newEmployee.setEmployeeInfo(employeeInfo);
         newEmployee.setEmployeeInfo();
     }
 
-    public String[] retrieveUserDetails(String username) {
-        EmployeeProfile employee = new EmployeeProfile(username);
+    public String[] retrieveUserDetails(String employeeUsername) {
+        EmployeeProfile employee = new EmployeeProfile(employeeUsername);
         return employee.getEmployeeInfo();
     }
 
     public void updateEmployeeProfile(String[] employeeInfo) {
-        EmployeeProfile employee = new EmployeeProfile(employeeInfo[0]);
+        System.out.println("Array Data: " + Arrays.toString(employeeInfo));
+        EmployeeProfile employee = new EmployeeProfile(employeeInfo[1]);
         employee.setEmployeeInfo(employeeInfo);
         employee.setEmployeeInfo();
     }
 
-    public void applyLeave(String leaveType, int duration, String date, String approvalStatus,
-            String employeeUsername) {
-        LeaveApplication newLeave = new LeaveApplication(leaveType, duration, date, approvalStatus, employeeUsername);
+    public void applyLeave(String leaveType, int duration, String date, String approvalStatus, String username) {
+        LeaveApplication newLeave = new LeaveApplication(leaveType, duration, date, approvalStatus, username);
+        newLeave.setLeaveDetails(newLeave.getLeaveDetails());
         newLeave.setLeaveDetails();
     }
 
     public void cancelLeave(String username, String date) {
         LeaveApplication leave = new LeaveApplication(username);
         leave.deleteLeave(date);
-        leave.setLeaveDetails();
     }
 
     public String checkLeaveStatus(String username, String date) {
@@ -179,16 +247,15 @@ class HumanResourceOfficer extends Users {
 
 class DepartmentManager extends Users {
 
-    public void applyLeave(String leaveType, int duration, String date, String approvalStatus,
-            String employeeUsername) {
-        LeaveApplication newLeave = new LeaveApplication(leaveType, duration, date, approvalStatus, employeeUsername);
+    public void applyLeave(String leaveType, int duration, String date, String approvalStatus, String username) {
+        LeaveApplication newLeave = new LeaveApplication(leaveType, duration, date, approvalStatus, username);
+        newLeave.setLeaveDetails(newLeave.getLeaveDetails());
         newLeave.setLeaveDetails();
     }
 
     public void cancelLeave(String username, String date) {
         LeaveApplication leave = new LeaveApplication(username);
         leave.deleteLeave(date);
-        leave.setLeaveDetails();
     }
 
     public String[][] leaveApplicationList() {
@@ -203,32 +270,31 @@ class DepartmentManager extends Users {
         return leave.getLeaveDetails()[4];
     }
 
-    public void approveLeave(String username, String date) {
-        LeaveApplication leave = new LeaveApplication(username);
+    public void approveLeave(String employeeUsername, String date) {
+        LeaveApplication leave = new LeaveApplication(employeeUsername);
         leave.setApprovalStatus("approved");
         leave.setLeaveDetails();
     }
 
-    public void rejectLeave(String username, String date) {
-        LeaveApplication leave = new LeaveApplication(username);
+    public void rejectLeave(String employeeUsername, String date) {
+        LeaveApplication leave = new LeaveApplication(employeeUsername);
         leave.setApprovalStatus("rejected");
         leave.setLeaveDetails();
     }
-
+    
 }
 
 class PayrollOfficer extends Users {
 
-    public void applyLeave(String leaveType, int duration, String date, String approvalStatus,
-            String employeeUsername) {
-        LeaveApplication newLeave = new LeaveApplication(leaveType, duration, date, approvalStatus, employeeUsername);
+    public void applyLeave(String leaveType, int duration, String date, String approvalStatus, String username) {
+        LeaveApplication newLeave = new LeaveApplication(leaveType, duration, date, approvalStatus, username);
+        newLeave.setLeaveDetails(newLeave.getLeaveDetails());
         newLeave.setLeaveDetails();
     }
 
     public void cancelLeave(String username, String date) {
         LeaveApplication leave = new LeaveApplication(username);
         leave.deleteLeave(date);
-        leave.setLeaveDetails();
     }
 
     public String checkLeaveStatus(String username, String date) {
@@ -236,13 +302,13 @@ class PayrollOfficer extends Users {
         return leave.getLeaveDetails()[4];
     }
 
-    public void createPayroll(String username, int grossSalary) {
-        Payroll payroll = new Payroll(username, grossSalary);
+    public void createPayroll(String employeeUsername, int grossSalary) {
+        Payroll payroll = new Payroll(employeeUsername, grossSalary);
         payroll.setPayrollDetails();
     }
 
-    public String[] getPayrollDataMonth(String username, String month) {
-        Payroll payroll = new Payroll(username, month);
+    public String[] getPayrollDataMonth(String employeeUsername, String month) {
+        Payroll payroll = new Payroll(employeeUsername, month);
         // Get_Payroll_Data logic
         return payroll.getPayrollDetails();
     }
@@ -252,9 +318,10 @@ class PayrollOfficer extends Users {
     // return payroll.getPayrollDetails();
     // }
 
-    public void updatePayroll(String username, String month, int newGrossSalary) {
-        Payroll payroll = new Payroll(username, month);
+    public void updatePayroll(String employeeUsername, String month, int newGrossSalary) {
+        Payroll payroll = new Payroll(employeeUsername, month);
         payroll.setGrossSalary(newGrossSalary);
+        payroll.setPayrollDetails(payroll.getPayrollDetails());
         payroll.setPayrollDetails();
     }
 
@@ -262,15 +329,15 @@ class PayrollOfficer extends Users {
 
 class Employee extends Users {
 
-    public void applyLeave(String leaveType, int duration, String date, String approvalStatus, String employeeUsername) {
-        LeaveApplication newLeave = new LeaveApplication(leaveType, duration, date, approvalStatus, employeeUsername);
+    public void applyLeave(String leaveType, int duration, String date, String approvalStatus, String username) {
+        LeaveApplication newLeave = new LeaveApplication(leaveType, duration, date, approvalStatus, username);
+        newLeave.setLeaveDetails(newLeave.getLeaveDetails());
         newLeave.setLeaveDetails();
     }
 
     public void cancelLeave(String username, String date) {
         LeaveApplication leave = new LeaveApplication(username);
         leave.deleteLeave(date);
-        leave.setLeaveDetails();
     }
 
     public String checkLeaveStatus(String username, String date) {
@@ -302,13 +369,10 @@ class Employee extends Users {
 
     public int[] monthlyReport(String username, String month) {
         int[] attendanceInfo = {0, 0};
-        if (Integer.parseInt(month) < 10 && month.length() < 2){
-            month = "0"+month;
-        }
         TimeAttendance Attendance = new TimeAttendance(username);
         String[][] FileInfo = Attendance.getEmployeeAttendanceInfo();
         for (String[] info : FileInfo) {
-            if (info[1].split("-")[1].equals(month)){
+            if (Integer.parseInt(info[1].split("-")[1]) == Integer.parseInt(month)){
                 attendanceInfo[0] += 1;
                 if (info[4].equals("1")){
                     attendanceInfo[1] += 1;
@@ -318,8 +382,19 @@ class Employee extends Users {
         return attendanceInfo;
     }
 
-    public void annualReport(String username, String currentYear) {
-        // Annual_Report logic
+    public int[] annualReport(String username, String currentYear) {
+        int[] attendanceInfo = {0, 0};
+        TimeAttendance Attendance = new TimeAttendance(username);
+        String[][] FileInfo = Attendance.getEmployeeAttendanceInfo();
+        for (String[] info : FileInfo) {
+            if (Integer.parseInt(info[1].split("-")[2]) == Integer.parseInt(currentYear)){
+                attendanceInfo[0] += 1;
+                if (info[4].equals("1")){
+                    attendanceInfo[1] += 1;
+                }
+            }
+        }
+        return attendanceInfo;
     }
 }
 
@@ -358,10 +433,12 @@ class EmployeeProfile {
         this.position = position;
         this.department = department;
         this.monthlyGSalary = monthlyGSalary;
+        System.out.println("Data given by user have been stored to the object variables, Ex: "+employeeUsername);
     }
 
     public EmployeeProfile(String username) {
         String filepath = "user_profile.txt";
+        System.out.println("Username in parameter: " + username);
         try (BufferedReader br = new BufferedReader(new FileReader(filepath))) {
             String line;
             while ((line = br.readLine()) != null) {
@@ -375,7 +452,6 @@ class EmployeeProfile {
         } catch (IOException ex) {
             Logger.getLogger(EmployeeProfile.class.getName()).log(Level.SEVERE, null, ex);
         }
-
         this.role = Integer.parseInt(employeeInfo[0]);
         this.employeeUsername = employeeInfo[1];
         this.employeePassword = employeeInfo[2];
@@ -393,14 +469,32 @@ class EmployeeProfile {
     }
 
     public void setEmployeeInfo() {
-
+        String filepath = "user_profile.txt";
+        if (employeeDetails == null){
+            try (BufferedReader br = new BufferedReader(new FileReader(filepath))) {
+                String line;
+                while ((line = br.readLine()) != null) {
+                    employeeDetails.add(line);
+                }
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(EmployeeProfile.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(EmployeeProfile.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+        boolean userFound = false;
         for (int i = 0; i < employeeDetails.size(); i++) {
             String employee = employeeDetails.get(i);
             if (employee.split(",")[1].equals(employeeUsername)) {
                 employeeDetails.set(i, String.join(",", getEmployeeInfo()));
+                userFound = true;
             }
         }
-        try (FileWriter writer = new FileWriter("user_profile.txt", false)) {
+        if (!userFound){
+            employeeDetails.add(String.join(",", getEmployeeInfo()));
+        }
+        try (FileWriter writer = new FileWriter(filepath, false)) {
             for (String employee : employeeDetails) {
                 writer.write(employee + "\n");
             }
@@ -471,6 +565,7 @@ class EmployeeProfile {
         employeeInfo[2] = this.employeePassword;
         employeeInfo[3] = Integer.toString(this.loginAttempts);
         employeeInfo[4] = Integer.toString(this.accountStatus);
+        System.out.println("Account Status in getEmployeeInfo: "+accountStatus);
         employeeInfo[5] = this.name;
         employeeInfo[6] = this.contact;
         employeeInfo[7] = this.email;
@@ -480,6 +575,7 @@ class EmployeeProfile {
         employeeInfo[11] = this.position;
         employeeInfo[12] = this.department;
         employeeInfo[13] = this.monthlyGSalary;
+        System.out.println("Data is now being stored to the employeeInfo list, Ex: "+ Arrays.toString(employeeInfo));
         return employeeInfo;
     }
 
@@ -541,6 +637,21 @@ class EmployeeProfile {
 
     public void setEmployeeInfo(String[] employeeInfo) {
         this.employeeInfo = employeeInfo;
+        this.role = Integer.parseInt(employeeInfo[0]);
+        this.employeeUsername = employeeInfo[1];
+        this.employeePassword = employeeInfo[2];
+        this.loginAttempts = Integer.parseInt(employeeInfo[3]);
+        this.accountStatus = Integer.parseInt(employeeInfo[4]);
+        this.name = employeeInfo[5];
+        this.contact = employeeInfo[6];
+        this.email = employeeInfo[7];
+        this.address = employeeInfo[8];
+        this.emergencyContact = employeeInfo[9];
+        this.workExperience = Integer.parseInt(employeeInfo[10]);
+        this.position = employeeInfo[11];
+        this.department = employeeInfo[12];
+        this.monthlyGSalary = employeeInfo[13];
+
     }
 
 }
@@ -615,14 +726,36 @@ class LeaveApplication {
     }
 
     public void setLeaveDetails() {
-        for (int i = 0; i < leaveInfo.size(); i++) {
-            String leave = leaveInfo.get(i);
-            if (leave.split(",")[1].equals(employeeUsername)) {
-                leaveInfo.set(i, String.join(",", getLeaveDetails()));
+        String filepath = "leave_request.txt";
+        System.out.println("Leave Info List: "+leaveInfo);
+        if (leaveInfo.isEmpty()){
+            System.out.println("Leave Info List is Null");
+            try (BufferedReader br = new BufferedReader(new FileReader(filepath))) {
+                String line;
+                while ((line = br.readLine()) != null) {
+                    leaveInfo.add(line);
+                    System.out.println("Lines: "+line);
+                }
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(LeaveApplication.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(LeaveApplication.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+        boolean userFound = false;
+        System.out.println("Leave Info List: "+leaveInfo);
+        for (int i = 0; i < leaveInfo.size(); i++) {
+            String leave[] = leaveInfo.get(i).split(",");
+            if (leave[0].equals(employeeUsername)) {
+                leaveInfo.set(i, String.join(",", getLeaveDetails()));
+                userFound = true;
+            }
+        }
+        if (!userFound){
+            leaveInfo.add(String.join(",", getLeaveDetails()));
+        }
 
-        try (FileWriter writer = new FileWriter("leave_request.txt", false)) {
+        try (FileWriter writer = new FileWriter(filepath, false)) {
             for (String leave : leaveInfo) {
                 writer.write(leave + "\n");
             }
@@ -638,6 +771,13 @@ class LeaveApplication {
                 leaveInfo.remove(i);
                 i--; // Adjust index after removal
             }
+        }
+        try (FileWriter writer = new FileWriter("leave_request.txt", false)) {
+            for (String leave : leaveInfo) {
+                writer.write(leave + "\n");
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(LeaveApplication.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -680,6 +820,7 @@ class LeaveApplication {
     }
 
     public void setLeaveDetails(String[] leaveDetails) {
+        System.out.println(Arrays.toString(leaveDetails));
         this.leaveDetails = leaveDetails;
     }
 
@@ -699,16 +840,17 @@ class Payroll {
     private double netSalary;
     private String date;
     private String[] payrollDetails = new String[8];
+    DecimalFormat df = new DecimalFormat("#.00");
 
     public Payroll(String username, int grossSalary) {
         LocalDate myObj = LocalDate.now(); // Create a date object
         this.employeeUsername = username;
         this.grossSalary = grossSalary;
-        this.epf = grossSalary * 0.11;
-        this.socso = grossSalary * 0.005;
-        this.eis = grossSalary * 0.002;
-        this.annualTax = grossSalary * 0.41666;
-        this.netSalary = grossSalary - epf - socso - eis - annualTax;
+        this.epf = Double.parseDouble(df.format(grossSalary * 0.11));
+        this.socso = Double.parseDouble(df.format(grossSalary * 0.005));
+        this.eis = Double.parseDouble(df.format(grossSalary * 0.002));
+        this.annualTax = Double.parseDouble(df.format(grossSalary * 0.41666));
+        this.netSalary = Double.parseDouble(df.format(grossSalary - epf - socso - eis - annualTax));
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         this.date = myObj.format(formatter);
     }
@@ -743,7 +885,7 @@ class Payroll {
         try (BufferedReader br = new BufferedReader(new FileReader(filepath))) {
             String line;
             while ((line = br.readLine()) != null) {
-                if (line.split(",")[0].equals(username) && line.split(",")[4].split("-")[1].equals(month)) {
+               if (line.split(",")[0].equals(username) && Integer.parseInt(line.split(",")[7].split("-")[1]) == Integer.parseInt(month)) {
                     payrollDetails = line.split(",");
                 }
                 payrollInfo.add(line);
@@ -755,23 +897,53 @@ class Payroll {
         }
         this.employeeUsername = payrollDetails[0];
         this.grossSalary = Integer.parseInt(payrollDetails[1]);
-        this.epf = Integer.parseInt(payrollDetails[2]);
-        this.socso = Integer.parseInt(payrollDetails[3]);
-        this.eis = Integer.parseInt(payrollDetails[4]);
-        this.annualTax = Integer.parseInt(payrollDetails[5]);
-        this.netSalary = Integer.parseInt(payrollDetails[6]);
+        this.epf = Double.parseDouble(df.format(grossSalary * 0.11));
+        this.socso = Double.parseDouble(df.format(grossSalary * 0.005));
+        this.eis = Double.parseDouble(df.format(grossSalary * 0.002));
+        this.annualTax = Double.parseDouble(df.format(grossSalary * 0.41666));
+        this.netSalary = Double.parseDouble(df.format(grossSalary - epf - socso - eis - annualTax));
         this.date = payrollDetails[7];
     }
 
     public void setPayrollDetails() {
-        // put into database
-
-        for (int i = 0; i < payrollInfo.size(); i++) {
-            String payroll = payrollInfo.get(i);
-            if (payroll.split(",")[1].equals(employeeUsername)) {
-                payrollInfo.set(i, String.join(",", getPayrollDetails()));
+        String filepath = "payroll_transaction.txt";
+        boolean userFound = false;
+        if (payrollInfo.isEmpty()){
+            try (BufferedReader br = new BufferedReader(new FileReader(filepath))) {
+                String line;
+                while ((line = br.readLine()) != null) {
+                    payrollInfo.add(line);
+                }
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(Payroll.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(Payroll.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+        for (int i = 0; i < payrollInfo.size(); i++) {
+            String payroll = payrollInfo.get(i);
+            System.out.println("The list username: " + payroll.split(",")[0]);
+            System.out.println("The list date: " + payroll.split(",")[7]);
+            System.out.println("The obj username: " + employeeUsername);
+            System.out.println("The obj date: " + date);
+            if (payroll.split(",")[0].equals(employeeUsername) && payroll.split(",")[7].equals(date)) {
+                payrollInfo.set(i,String.join(",",getPayrollDetails()));               
+                userFound = true;
+                System.out.println("Changed for date and username");
+                break;
+            } 
+            if (!userFound && payroll.split(",")[1].equals(employeeUsername)){
+                payrollInfo.set(i, String.join(",", getPayrollDetails()));
+                userFound = true;
+                System.out.println("Changed for username");
+                break;
+            }
+        }
+        if (!userFound){
+            payrollInfo.add(String.join(",",getPayrollDetails()));
+            System.out.println("Added for didnt find username");
+        }
+        
         try (FileWriter writer = new FileWriter("payroll_transaction.txt", false)) {
             for (String payroll : payrollInfo) {
                 writer.write(payroll + "\n");
@@ -810,6 +982,12 @@ class Payroll {
     }
 
     public String[] getPayrollDetails() {
+        this.epf = Double.parseDouble(df.format(grossSalary * 0.11));
+        this.socso = Double.parseDouble(df.format(grossSalary * 0.005));
+        this.eis = Double.parseDouble(df.format(grossSalary * 0.002));
+        this.annualTax = Double.parseDouble(df.format(grossSalary * 0.41666));
+        this.netSalary = Double.parseDouble(df.format(grossSalary - epf - socso - eis - annualTax));
+
         payrollDetails[0] = this.employeeUsername;
         payrollDetails[1] = Integer.toString(this.grossSalary);
         payrollDetails[2] = Double.toString(this.epf);
@@ -935,8 +1113,12 @@ class TimeAttendance {
         System.out.println("username: " + username);
         System.out.println("Date is: " + date);
         System.out.println("Time is: " + time);
+        
+        String[] parts = time.split(":");
+        int hour = Integer.parseInt(parts[0]);
+        int minute = Integer.parseInt(parts[1]);
 
-        this.lateAttendance = Integer.parseInt(time.split(":")[0]) > 8 ? 1 : 0;
+        this.lateAttendance = (hour > 8 || (hour == 8 && minute > 30)) ? 1 : 0;
         System.out.println("Late Attendance: " + lateAttendance);
 
         // Set timeIn or timeOut based on the "Clock" input

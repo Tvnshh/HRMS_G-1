@@ -1,3 +1,4 @@
-A0008,annual,5,2023-07-01,pending
-A0009,medical,3,2023-07-01,pending
-A0006,maternity,30,2023-07-01,pending
+A0008,annual,5,01-07-2023,approved
+A0009,medical,3,01-07-2023,rejected
+A0006,maternity,30,01-07-2023,pending,NULL
+A0007,annual,10,01-07-2023,pending,NULL

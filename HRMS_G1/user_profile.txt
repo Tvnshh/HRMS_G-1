@@ -3,7 +3,7 @@
 2,A0003,hrPass123,0,1,Alice Brown,234-567-8901,alice.brown@example.com,456 Oak St,Bob Brown-876-543-2109,3,HR Office,HR,5000
 2,A0004,hrPass456,0,1,Bob White,567-890-1234,bob.white@example.com,789 Pine St,Alice White-765-432-1098,2,HR Office,HR,5000
 3,A0005,deptMgrPass123,0,1,Carol Green,456-789-0123,carol.green@example.com,321 Cedar St,Dave Green-654-321-0987,2,Department Manager,IT,6000
-4,A0006,payrollPass123,0,1,Dave Black,678-901-2345,dave.black@example.com,987 Birch St,Eve Black-543-210-9876,3,Payroll Officer,Payroll,5500
-4,A0007,abc,0,1,Eve Blue,789-012-3456,eve.blue@example.com,654 Spruce St,Frank Blue-432-109-8765,2,Payroll Officer,Payroll,5500
-5,A0008,employeePass123,0,1,Frank Yellow,890-123-4567,frank.yellow@example.com,321 Willow St,Grace Yellow-321-987-6543,M,1,Employee,Marketing,3000
-5,A0009,employeePass456,0,1,Grace Red,901-234-5678,grace.red@example.com,432AshSt,Henry Red-210-987-6543,2,Employee,Sales,3500
+4,A0007,payrollPass456,0,1,Eve Blue,789-012-3456,eve.blue@example.com,654 Spruce St,Frank Blue-432-109-8765,2,Payroll Officer,Payroll,5500
+5,A0008,employeePass123,0,1,Frank Yellow,890-123-4567,frank.yellow@example.com,321 Willow St,Grace Yellow-321-987-6543,1,Employee,Marketing,3000
+3,A0009,GOAT NO 1,0,1,Kuthire Savari,0128820192,tkri05@gmail.com,Jalan Klang Penang,999,3,Officer,Payroll,5000
+3,Tarun Krishnan,123,0,1,Kuthire Savari,0128820192,tkri05@gmail.com,Jalan Klang Penang,999,3,Officer,Payroll,5000
