@@ -26,18 +26,48 @@ public class Profile_Management_Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(480, 300));
+        setResizable(false);
+        getContentPane().setLayout(null);
+
+        jButton1.setBackground(new java.awt.Color(0, 0, 0));
+        jButton1.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 0, 153));
+        jButton1.setText("Change Password ");
+        getContentPane().add(jButton1);
+        jButton1.setBounds(137, 108, 210, 29);
+
+        jButton2.setBackground(new java.awt.Color(0, 0, 0));
+        jButton2.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 0, 153));
+        jButton2.setText("View Profile ");
+        getContentPane().add(jButton2);
+        jButton2.setBounds(137, 181, 210, 29);
+
+        jLabel1.setFont(new java.awt.Font("Bookman Old Style", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 0, 153));
+        jLabel1.setText("PROFILE MANAGEMENT");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(90, 6, 310, 42);
+
+        jButton3.setBackground(new java.awt.Color(102, 102, 102));
+        jButton3.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jButton3.setText("BACK");
+        getContentPane().add(jButton3);
+        jButton3.setBounds(6, 6, 66, 22);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\images\\HR_Menu.jpg")); // NOI18N
+        jLabel2.setText("jLabel2");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(-3, -4, 490, 300);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -79,5 +109,10 @@ public class Profile_Management_Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
