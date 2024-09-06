@@ -7,3 +7,4 @@
 4,Yuthes,password,0,1,Yuthes,789-012-3456,eve.blue@example.com,654 Spruce St,Frank Blue-432-109-8765,2,Payroll Officer,Payroll,5500,M
 5,A0008,employeePass123,0,1,Frank Yellow,890-123-4567,frank.yellow@example.com,321 Willow St,Grace Yellow-321-987-6543,1,Employee,Marketing,3000,M
 5,A0009,employeePass456,0,1,Grace Red,901-234-5678,grace.red@example.com,432AshSt,Henry Red-210-987-6543,2,Employee,Sales,3500,F
+2,Tarun Krishnan,1234,0,1,Tarun,0,0,0,0,0,0,0,0,0

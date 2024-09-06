@@ -132,6 +132,7 @@ public class Check_Leave_Status extends javax.swing.JFrame {
         jLabel8.setBounds(180, 10, 130, 20);
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\images\\beach 2.0.jpg")); // NOI18N
         jLabel7.setText("jLabel7");
         getContentPane().add(jLabel7);
         jLabel7.setBounds(0, -40, 510, 340);

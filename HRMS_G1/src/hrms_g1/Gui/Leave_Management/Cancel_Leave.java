@@ -127,6 +127,11 @@ public class Cancel_Leave extends javax.swing.JFrame {
         jButton2.setBackground(new java.awt.Color(153, 153, 153));
         jButton2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jButton2.setText("Cancel ");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton2);
         jButton2.setBounds(250, 280, 72, 22);
 
@@ -135,6 +140,7 @@ public class Cancel_Leave extends javax.swing.JFrame {
         getContentPane().add(jLabel6);
         jLabel6.setBounds(172, 0, 220, 30);
 
+        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\images\\beach 2.0.jpg")); // NOI18N
         jLabel7.setText("jLabel7");
         getContentPane().add(jLabel7);
         jLabel7.setBounds(0, 0, 580, 330);
@@ -146,6 +152,10 @@ public class Cancel_Leave extends javax.swing.JFrame {
         previousWindow.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

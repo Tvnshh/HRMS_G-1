@@ -70,7 +70,7 @@ public class Leave_Application_List extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(111, 41, 452, 127);
+        jScrollPane1.setBounds(110, 50, 452, 127);
 
         jButton2.setBackground(new java.awt.Color(102, 255, 102));
         jButton2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
@@ -86,11 +86,13 @@ public class Leave_Application_List extends javax.swing.JFrame {
         jButton3.setBounds(380, 220, 72, 23);
 
         jLabel2.setFont(new java.awt.Font("Bauhaus 93", 0, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Leave Applications");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(220, 0, 210, 30);
+        jLabel2.setBounds(220, 10, 210, 30);
 
         jLabel1.setBackground(new java.awt.Color(255, 0, 51));
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\images\\dep_manager_km.jpg")); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(-3, -4, 620, 330);
