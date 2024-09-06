@@ -4,6 +4,7 @@
  */
 package hrms_g1.Gui.Leave_Management;
 import Users.DepartmentManager;
+import Users.HumanResourceOfficer;
 import javax.swing.JFrame;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -45,6 +46,7 @@ public class Cancel_Leave extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
         displayStatus = new javax.swing.JTextPane();
+        searchButton = new javax.swing.JButton();
         cancelLeave = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -119,6 +121,17 @@ public class Cancel_Leave extends javax.swing.JFrame {
         getContentPane().add(jScrollPane4);
         jScrollPane4.setBounds(280, 210, 140, 21);
 
+        searchButton.setBackground(new java.awt.Color(153, 153, 153));
+        searchButton.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        searchButton.setText("Search ");
+        searchButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(searchButton);
+        searchButton.setBounds(440, 60, 72, 22);
+
         cancelLeave.setBackground(new java.awt.Color(153, 153, 153));
         cancelLeave.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         cancelLeave.setText("Cancel ");
@@ -147,6 +160,23 @@ public class Cancel_Leave extends javax.swing.JFrame {
         previousWindow.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
+        DepartmentManager hr = new DepartmentManager();
+        String date = selectDate.getText();
+
+        String[] userDetails = hr.getLeaveDetails(username);
+
+        if (userDetails != null) {
+            displayLeaveType.setText(userDetails[1]);
+            setDate.setText(userDetails[3]);
+            displayDuration.setText(userDetails[2]);
+            displayStatus.setText(userDetails[4]);
+        } else {
+            javax.swing.JOptionPane.showMessageDialog(this, "User not found!");
+        }
+
+    }//GEN-LAST:event_searchButtonActionPerformed
 
     private void cancelLeaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelLeaveActionPerformed
         DepartmentManager DM = new DepartmentManager();
@@ -183,6 +213,7 @@ public class Cancel_Leave extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JButton searchButton;
     private javax.swing.JTextField selectDate;
     private javax.swing.JTextPane setDate;
     // End of variables declaration//GEN-END:variables

@@ -4,6 +4,7 @@ import hrms_g1.Gui.Employee.Employee_Menu;
 import hrms_g1.Gui.HR_Officer.HR_Officer_Menu;
 import hrms_g1.Gui.Payroll_Officer.Payroll_Officer_Menu;
 import hrms_g1.Gui.System_Admin.System_Admin_Menu;
+import hrms_g1.Gui.Time_Attendance_Management.Clock_In_Out;
 
 import Users.Login;
 import Users.SystemAdministrator;
@@ -26,6 +27,7 @@ public class HRMS_Login extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        clockInOut = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -55,7 +57,7 @@ public class HRMS_Login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(loginButton);
-        loginButton.setBounds(160, 200, 80, 22);
+        loginButton.setBounds(150, 180, 100, 20);
 
         getPassword.setBackground(new java.awt.Color(153, 153, 153));
         getContentPane().add(getPassword);
@@ -75,6 +77,18 @@ public class HRMS_Login extends javax.swing.JFrame {
         getContentPane().add(jLabel5);
         jLabel5.setBounds(70, 130, 120, 15);
 
+        clockInOut.setBackground(new java.awt.Color(0, 0, 255));
+        clockInOut.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        clockInOut.setForeground(new java.awt.Color(255, 255, 255));
+        clockInOut.setText("Clock In/Out");
+        clockInOut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clockInOutActionPerformed(evt);
+            }
+        });
+        getContentPane().add(clockInOut);
+        clockInOut.setBounds(150, 210, 100, 22);
+
         jLabel2.setIcon(new javax.swing.ImageIcon("C:\\images\\HR_Menu.jpg")); // NOI18N
         getContentPane().add(jLabel2);
         jLabel2.setBounds(0, 0, 430, 300);
@@ -88,7 +102,6 @@ public class HRMS_Login extends javax.swing.JFrame {
     password = new String(passwordChars); 
     Login login = new Login(username, password);
     int role = login.login();
-    
     if (role == 0) {
         attempt += 1;
         if (attempt < 4) {
@@ -123,6 +136,10 @@ public class HRMS_Login extends javax.swing.JFrame {
     }
     }//GEN-LAST:event_loginButtonActionPerformed
 
+    private void clockInOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clockInOutActionPerformed
+        new Clock_In_Out(this).setVisible(true);
+    }//GEN-LAST:event_clockInOutActionPerformed
+
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -133,6 +150,7 @@ public class HRMS_Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton clockInOut;
     private javax.swing.JPasswordField getPassword;
     private javax.swing.JTextField getUsername;
     private javax.swing.JLabel jLabel1;

@@ -28,8 +28,6 @@ public class Employee extends Users {
 
     public void clockIn(String employeeUsername) {
         TimeAttendance VerifyAttendance = new TimeAttendance(employeeUsername);
-        // String date = TimeAttendance.getCurrentDate();
-        // String time = VerifyAttendance.getTime();
         VerifyAttendance.Clocking(employeeUsername, "in");
         VerifyAttendance.setTimeAttendanceDetails();
 
@@ -37,13 +35,6 @@ public class Employee extends Users {
 
     public void clockOut(String employeeUsername) {
         TimeAttendance VerifyAttendance = new TimeAttendance(employeeUsername);
-        //String date = TimeAttendance.getCurrentDate();
-        // String time = VerifyAttendance.getTime();
-        // if
-        // (!(VerifyAttendance.getEmployeeUsername().equals(employeeUsername)&&(VerifyAttendance.getDate().equals(date)))){
-        // TimeAttendance Attendance = new TimeAttendance(employeeUsername, "out");
-        // Attendance.setTimeAttendanceDetails();
-        // }
         VerifyAttendance.Clocking(employeeUsername, "out");
         VerifyAttendance.setTimeAttendanceDetails();
     }

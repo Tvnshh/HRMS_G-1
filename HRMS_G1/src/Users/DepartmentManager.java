@@ -27,6 +27,13 @@ public class DepartmentManager extends Users {
         String[][] employeeFileInfo = leave.getEmployeeFileInfo();
         return employeeFileInfo;
     }
+    
+    public String[] getLeaveDetails(String username) {
+        LeaveApplication leave = new LeaveApplication(username);
+        // return a nested array
+        String[] employeeFileInfo = leave.getLeaveDetails();
+        return employeeFileInfo;
+    }
 
     public String checkLeaveStatus(String username, String date) {
         LeaveApplication leave = new LeaveApplication(username);

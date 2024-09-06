@@ -147,9 +147,6 @@ public class Leave_Management_Menu extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_leaveApplicationListActionPerformed
 
-//    public static void main(String args[]){
-//        new Leave_Management_Menu("Kieran Matthew").setVisible(true);
-//    }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton applyLeave;

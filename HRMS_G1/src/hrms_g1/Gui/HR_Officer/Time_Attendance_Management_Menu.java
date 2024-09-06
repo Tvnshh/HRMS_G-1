@@ -2,7 +2,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package hrms_g1.Gui.Employee;
+package hrms_g1.Gui.HR_Officer;
+import hrms_g1.Gui.Employee.*;
 import hrms_g1.Gui.Time_Attendance_Management.Annual_Report;
 import hrms_g1.Gui.Time_Attendance_Management.Monthly_Report;
 
@@ -38,7 +39,6 @@ public class Time_Attendance_Management_Menu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(730, 410));
-        setPreferredSize(new java.awt.Dimension(730, 410));
         setResizable(false);
         getContentPane().setLayout(null);
 

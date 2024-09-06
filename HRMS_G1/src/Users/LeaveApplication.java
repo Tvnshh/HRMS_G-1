@@ -105,6 +105,7 @@ class LeaveApplication {
                 Logger.getLogger(LeaveApplication.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+            
         boolean userFound = false;
         System.out.println("Leave Info List: "+leaveInfo);
         for (int i = 0; i < leaveInfo.size(); i++) {
@@ -114,9 +115,7 @@ class LeaveApplication {
                 userFound = true;
             }
         }
-        if (!userFound){
-            leaveInfo.add(String.join(",", getLeaveDetails()));
-        }
+        if (!userFound){leaveInfo.add(String.join(",", getLeaveDetails()));}
 
         try (FileWriter writer = new FileWriter(filepath, false)) {
             for (String leave : leaveInfo) {
