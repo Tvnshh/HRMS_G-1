@@ -5,7 +5,11 @@
 package hrms_g1.Gui.Payroll_management;
 import Users.PayrollOfficer;
 import Users.SystemAdministrator;
+import Users.Employee;
+
 import javax.swing.JFrame;
+import java.text.DecimalFormat;
+import java.time.LocalDate;
 
 /**
  *
@@ -140,6 +144,11 @@ public class Create_Payroll extends javax.swing.JFrame {
         searchUsername.setFont(new java.awt.Font("Constantia", 1, 12)); // NOI18N
         searchUsername.setForeground(new java.awt.Color(255, 255, 255));
         searchUsername.setText("Search");
+        searchUsername.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchUsernameActionPerformed(evt);
+            }
+        });
         getContentPane().add(searchUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 60, -1, -1));
 
         createPayroll.setBackground(new java.awt.Color(0, 0, 0));
@@ -164,6 +173,11 @@ public class Create_Payroll extends javax.swing.JFrame {
         generatePayDetails1.setFont(new java.awt.Font("Constantia", 1, 12)); // NOI18N
         generatePayDetails1.setForeground(new java.awt.Color(255, 255, 255));
         generatePayDetails1.setText("Generate");
+        generatePayDetails1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                generatePayDetails1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(generatePayDetails1, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 317, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Constantia", 1, 18)); // NOI18N
@@ -177,15 +191,44 @@ public class Create_Payroll extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void createPayrollActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createPayrollActionPerformed
-        // TODO add your handling code here:
+        PayrollOfficer payroll = new PayrollOfficer();
+        payroll.createPayroll(getUsername.getText(), Integer.parseInt(getGrossSalary.getText()));
+        this.dispose();
+        previousWindow.setVisible(true);
+
+        
     }//GEN-LAST:event_createPayrollActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
+        previousWindow.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void getUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_getUsernameActionPerformed
+
     }//GEN-LAST:event_getUsernameActionPerformed
+
+    private void searchUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchUsernameActionPerformed
+        SystemAdministrator admin = new SystemAdministrator();
+        
+        String []userDetails = admin.retrieveUserDetails(getUsername.getText());
+        Employee employee = new Employee();
+        int[] attendanceDetails = employee.monthlyReport(username, "09");  
+        getGrossSalary.setText((attendanceDetails[1]>3)?userDetails[13]:Integer.toString(Integer.parseInt(userDetails[13])-100));
+    }//GEN-LAST:event_searchUsernameActionPerformed
+
+    private void generatePayDetails1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generatePayDetails1ActionPerformed
+        DecimalFormat df = new DecimalFormat();
+        SystemAdministrator admin = new SystemAdministrator();
+        String []userDetails = admin.retrieveUserDetails(getUsername.getText());
+        String grossSalary = getGrossSalary.getText();
+        setEPF.setText(df.format(Integer.parseInt(grossSalary) * 0.11));
+        setSOCSO.setText(df.format(Integer.parseInt(grossSalary) * 0.005));
+        setEIS.setText(df.format(Integer.parseInt(grossSalary) * 0.002));
+        setAnnualTax.setText(df.format(Integer.parseInt(grossSalary) * 0.41666));
+        setNetSalary.setText(df.format(Integer.parseInt(grossSalary) - Double.parseDouble(setEPF.getText()) - Double.parseDouble(setSOCSO.getText()) - Double.parseDouble(setEIS.getText()) - Double.parseDouble(setAnnualTax.getText())));
+
+    }//GEN-LAST:event_generatePayDetails1ActionPerformed
 
     /**
      * @param args the command line arguments

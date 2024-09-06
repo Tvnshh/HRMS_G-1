@@ -49,5 +49,22 @@ public class PayrollOfficer extends Users {
         payroll.setPayrollDetails();
     }
 
+    @Override
+    public boolean verifyPassword(String username, String password) {
+        EmployeeProfile employee = new EmployeeProfile(username);
+        return password.equals(employee.getEmployeePassword());
+    }
+    @Override
+    public void changePassword(String username, String newPassword) {
+        EmployeeProfile employee = new EmployeeProfile(username);
+        employee.setEmployeePassword(newPassword);
+        employee.setEmployeeInfo();
+    }
+    @Override
+    public String[] viewProfile(String username){
+        EmployeeProfile Profile = new EmployeeProfile(username);
+        return Profile.getEmployeeInfo();
+    }
+
 }
 

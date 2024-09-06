@@ -74,4 +74,20 @@ public class SystemAdministrator extends Users {
         employee.setEmployeeInfo(employeeInfo);
         employee.setEmployeeInfo();
     }
+    @Override
+    public boolean verifyPassword(String username, String password) {
+        EmployeeProfile employee = new EmployeeProfile(username);
+        return password.equals(employee.getEmployeePassword());
+    }
+    @Override
+    public void changePassword(String username, String newPassword) {
+        EmployeeProfile employee = new EmployeeProfile(username);
+        employee.setEmployeePassword(newPassword);
+        employee.setEmployeeInfo();
+    }
+    @Override
+    public String[] viewProfile(String username){
+        EmployeeProfile Profile = new EmployeeProfile(username);
+        return Profile.getEmployeeInfo();
+    }
 }

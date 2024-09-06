@@ -3,41 +3,17 @@ package Users;
 //Hello Miss, hope you like our project
 
 public abstract class Users {
-    
-    public Users() {
-    }
-
     protected String username;
     protected String password;
-    protected int loginAttempts = 0;
 
-    public Users(String username, String password) {
-        this.username = username;
-        this.password = password;
+    public Users() {
     }
+    
+    public abstract boolean verifyPassword(String username, String password);
 
-    public void login(String username, String password) {
-        // Login logic
-    }
-
-    public void logout() {
-        // Logout logic
-    }
-
-    public boolean verifyPassword(String username, String password) {
-        EmployeeProfile employee = new EmployeeProfile(username);
-        return password.equals(employee.getEmployeePassword());
-    }
-
-    public void changePassword(String username, String newPassword) {
-        EmployeeProfile employee = new EmployeeProfile(username);
-        employee.setEmployeePassword(newPassword);
-        employee.setEmployeeInfo();
-    }
-    public String[] viewProfile(String username){
-        EmployeeProfile Profile = new EmployeeProfile(username);
-        return Profile.getEmployeeInfo();
-    }
+    public abstract void changePassword(String username, String newPassword);
+    
+    public abstract String[] viewProfile(String username);
 
     public static void main(String[] args) {
         //Testing
