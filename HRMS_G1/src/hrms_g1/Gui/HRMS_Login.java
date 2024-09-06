@@ -84,7 +84,8 @@ public class HRMS_Login extends javax.swing.JFrame {
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
     username = getUsername.getText();
-    password = getPassword.getText();
+    char[] passwordChars = getPassword.getPassword();
+    password = new String(passwordChars); 
     Login login = new Login(username, password);
     int role = login.login();
     

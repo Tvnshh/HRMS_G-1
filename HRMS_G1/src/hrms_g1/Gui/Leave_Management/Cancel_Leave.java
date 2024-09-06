@@ -5,21 +5,23 @@
 package hrms_g1.Gui.Leave_Management;
 import Users.DepartmentManager;
 import javax.swing.JFrame;
-
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 /**
  *
  * @author tvanm
  */
 public class Cancel_Leave extends javax.swing.JFrame {
     private String username;
-    private final JFrame previousWindow;  
+    private final JFrame previousWindow;
+    private final SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yy");
     
     public Cancel_Leave(JFrame previousWindow, String username) {
         this.previousWindow = previousWindow;
         this.username = username;
         initComponents();
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -31,20 +33,19 @@ public class Cancel_Leave extends javax.swing.JFrame {
 
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        setDate = new javax.swing.JTextPane();
+        selectDate = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextPane1 = new javax.swing.JTextPane();
+        displayLeaveType = new javax.swing.JTextPane();
         jLabel3 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTextPane2 = new javax.swing.JTextPane();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTextPane3 = new javax.swing.JTextPane();
+        displayDuration = new javax.swing.JTextPane();
         jLabel5 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTextPane4 = new javax.swing.JTextPane();
-        jButton2 = new javax.swing.JButton();
+        displayStatus = new javax.swing.JTextPane();
+        cancelLeave = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
 
@@ -70,44 +71,38 @@ public class Cancel_Leave extends javax.swing.JFrame {
         getContentPane().add(jLabel1);
         jLabel1.setBounds(180, 60, 90, 20);
 
-        jComboBox1.setBackground(new java.awt.Color(204, 204, 204));
-        jComboBox1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(jComboBox1);
-        jComboBox1.setBounds(280, 60, 72, 21);
+        setDate.setBackground(new java.awt.Color(153, 153, 153));
+        setDate.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        getContentPane().add(setDate);
+        setDate.setBounds(280, 130, 140, 19);
+        getContentPane().add(selectDate);
+        selectDate.setBounds(280, 60, 140, 22);
 
         jLabel2.setFont(new java.awt.Font("Bauhaus 93", 0, 14)); // NOI18N
         jLabel2.setText("Leave Type ");
         getContentPane().add(jLabel2);
         jLabel2.setBounds(180, 100, 80, 20);
 
-        jTextPane1.setBackground(new java.awt.Color(153, 153, 153));
-        jTextPane1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jScrollPane1.setViewportView(jTextPane1);
+        displayLeaveType.setBackground(new java.awt.Color(153, 153, 153));
+        displayLeaveType.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jScrollPane1.setViewportView(displayLeaveType);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(280, 90, 140, 21);
+        jScrollPane1.setBounds(280, 100, 140, 21);
 
         jLabel3.setFont(new java.awt.Font("Bauhaus 93", 0, 14)); // NOI18N
         jLabel3.setText("Date ");
         getContentPane().add(jLabel3);
         jLabel3.setBounds(220, 135, 40, 20);
 
-        jTextPane2.setBackground(new java.awt.Color(153, 153, 153));
-        jTextPane2.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jScrollPane2.setViewportView(jTextPane2);
-
-        getContentPane().add(jScrollPane2);
-        jScrollPane2.setBounds(280, 130, 140, 21);
-
         jLabel4.setFont(new java.awt.Font("Bauhaus 93", 0, 14)); // NOI18N
         jLabel4.setText("Duration ");
         getContentPane().add(jLabel4);
         jLabel4.setBounds(200, 170, 70, 20);
 
-        jTextPane3.setBackground(new java.awt.Color(153, 153, 153));
-        jTextPane3.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jScrollPane3.setViewportView(jTextPane3);
+        displayDuration.setBackground(new java.awt.Color(153, 153, 153));
+        displayDuration.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jScrollPane3.setViewportView(displayDuration);
 
         getContentPane().add(jScrollPane3);
         jScrollPane3.setBounds(280, 170, 140, 21);
@@ -117,23 +112,23 @@ public class Cancel_Leave extends javax.swing.JFrame {
         getContentPane().add(jLabel5);
         jLabel5.setBounds(210, 220, 50, 15);
 
-        jTextPane4.setBackground(new java.awt.Color(153, 153, 153));
-        jTextPane4.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jScrollPane4.setViewportView(jTextPane4);
+        displayStatus.setBackground(new java.awt.Color(153, 153, 153));
+        displayStatus.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jScrollPane4.setViewportView(displayStatus);
 
         getContentPane().add(jScrollPane4);
         jScrollPane4.setBounds(280, 210, 140, 21);
 
-        jButton2.setBackground(new java.awt.Color(153, 153, 153));
-        jButton2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jButton2.setText("Cancel ");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        cancelLeave.setBackground(new java.awt.Color(153, 153, 153));
+        cancelLeave.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        cancelLeave.setText("Cancel ");
+        cancelLeave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                cancelLeaveActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2);
-        jButton2.setBounds(250, 280, 72, 22);
+        getContentPane().add(cancelLeave);
+        cancelLeave.setBounds(250, 280, 72, 22);
 
         jLabel6.setFont(new java.awt.Font("Bauhaus 93", 0, 24)); // NOI18N
         jLabel6.setText("Leave Cancellation");
@@ -153,9 +148,13 @@ public class Cancel_Leave extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void cancelLeaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelLeaveActionPerformed
+        DepartmentManager DM = new DepartmentManager();
+        DM.cancelLeave(username,selectDate.getText());
+        javax.swing.JOptionPane.showMessageDialog(this, "Leave Successfully Cancelled!");
+        previousWindow.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_cancelLeaveActionPerformed
 
     /**
      * @param args the command line arguments
@@ -169,9 +168,11 @@ public class Cancel_Leave extends javax.swing.JFrame {
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton cancelLeave;
+    private javax.swing.JTextPane displayDuration;
+    private javax.swing.JTextPane displayLeaveType;
+    private javax.swing.JTextPane displayStatus;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -180,12 +181,9 @@ public class Cancel_Leave extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTextPane jTextPane1;
-    private javax.swing.JTextPane jTextPane2;
-    private javax.swing.JTextPane jTextPane3;
-    private javax.swing.JTextPane jTextPane4;
+    private javax.swing.JTextField selectDate;
+    private javax.swing.JTextPane setDate;
     // End of variables declaration//GEN-END:variables
 }

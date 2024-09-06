@@ -9,8 +9,9 @@ public class Apply_Leave extends javax.swing.JFrame {
     public Apply_Leave(JFrame previousWindow, String username) {
         this.previousWindow = previousWindow;
         this.username = username;
-        populateLeaveTypes();
         initComponents();
+        populateLeaveTypes();
+
     }
 
     private void populateLeaveTypes() {
@@ -62,6 +63,11 @@ public class Apply_Leave extends javax.swing.JFrame {
 
         displayLeaveType.setBackground(new java.awt.Color(153, 153, 153));
         displayLeaveType.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        displayLeaveType.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                displayLeaveTypeActionPerformed(evt);
+            }
+        });
         getContentPane().add(displayLeaveType);
         displayLeaveType.setBounds(310, 80, 87, 21);
 
@@ -76,7 +82,7 @@ public class Apply_Leave extends javax.swing.JFrame {
         leaveDuration.setBounds(310, 140, 141, 21);
 
         jLabel3.setFont(new java.awt.Font("Bauhaus 93", 0, 18)); // NOI18N
-        jLabel3.setText("(DD/MM/YY) date ");
+        jLabel3.setText("(DD-MM-YY) date ");
         getContentPane().add(jLabel3);
         jLabel3.setBounds(140, 210, 160, 28);
 
@@ -120,7 +126,15 @@ public class Apply_Leave extends javax.swing.JFrame {
         String date = leaveDate.getText();
         String approvalStatus = "pending"; // Assuming it's set to "Pending" initially
         new HumanResourceOfficer().applyLeave(leaveType, duration, date, approvalStatus, username);
+        javax.swing.JOptionPane.showMessageDialog(this, "Leave Successfully Applied!");
+        previousWindow.setVisible(true);
+        this.dispose();
+
     }//GEN-LAST:event_applyButtonActionPerformed
+
+    private void displayLeaveTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayLeaveTypeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_displayLeaveTypeActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

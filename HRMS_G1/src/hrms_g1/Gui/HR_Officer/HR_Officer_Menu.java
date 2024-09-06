@@ -119,7 +119,7 @@ public class HR_Officer_Menu extends javax.swing.JFrame {
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new HR_Officer_Menu("Kieran Matthew").setVisible(true);
+                new HR_Officer_Menu("A0008").setVisible(true);
             }
         });
     }

@@ -109,7 +109,7 @@ class LeaveApplication {
         System.out.println("Leave Info List: "+leaveInfo);
         for (int i = 0; i < leaveInfo.size(); i++) {
             String leave[] = leaveInfo.get(i).split(",");
-            if (leave[0].equals(employeeUsername)) {
+            if (leave[0].equals(employeeUsername) && leave[3].equals(date)) {
                 leaveInfo.set(i, String.join(",", getLeaveDetails()));
                 userFound = true;
             }

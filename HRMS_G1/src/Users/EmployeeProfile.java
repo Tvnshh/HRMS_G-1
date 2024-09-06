@@ -89,6 +89,7 @@ class EmployeeProfile {
         this.position = employeeInfo[11];
         this.department = employeeInfo[12];
         this.monthlyGSalary = employeeInfo[13];
+        this.gender = employeeInfo[14];
     }
 
     public void setEmployeeInfo() {
