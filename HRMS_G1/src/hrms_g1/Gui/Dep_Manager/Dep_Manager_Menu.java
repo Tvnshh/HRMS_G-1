@@ -3,10 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package hrms_g1.Gui.Dep_Manager;
-import hrms_g1.Gui.Leave_Management.Apply_Leave;
-import hrms_g1.Gui.Leave_Management.Apply_Leave;
-import hrms_g1.Gui.Leave_Management.Apply_Leave;
-import hrms_g1.Gui.Leave_Management.Apply_Leave;
+import hrms_g1.Gui.HRMS_Login;
 
 /**
  *
@@ -112,7 +109,8 @@ public class Dep_Manager_Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
+        new HRMS_Login().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

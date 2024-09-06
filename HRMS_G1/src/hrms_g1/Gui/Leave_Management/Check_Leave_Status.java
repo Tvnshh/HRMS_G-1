@@ -58,6 +58,11 @@ public class Check_Leave_Status extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(153, 153, 153));
         jButton1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jButton1.setText("BACK");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1);
         jButton1.setBounds(6, 6, 70, 22);
 
@@ -127,13 +132,17 @@ public class Check_Leave_Status extends javax.swing.JFrame {
         jLabel8.setBounds(180, 10, 130, 20);
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\yutheswaran\\Downloads\\beach 2.0.jpg")); // NOI18N
         jLabel7.setText("jLabel7");
         getContentPane().add(jLabel7);
         jLabel7.setBounds(0, -40, 510, 340);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        previousWindow.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -4,6 +4,8 @@
  */
 package hrms_g1.Gui.Employee;
 
+import hrms_g1.Gui.HRMS_Login;
+
 /**
  *
  * @author tvanm
@@ -44,6 +46,11 @@ public class Employee_Menu extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(51, 0, 153));
         jButton1.setForeground(new java.awt.Color(242, 242, 242));
         jButton1.setText("Log Out");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1);
         jButton1.setBounds(10, 10, 72, 23);
 
@@ -112,6 +119,11 @@ public class Employee_Menu extends javax.swing.JFrame {
         this.setVisible(false);
         newWindow.setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        this.dispose();
+        new HRMS_Login().setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
