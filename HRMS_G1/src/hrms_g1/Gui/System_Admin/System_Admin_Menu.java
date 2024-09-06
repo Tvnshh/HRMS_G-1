@@ -4,6 +4,9 @@
  */
 package hrms_g1.Gui.System_Admin;
 
+import hrms_g1.Gui.HRMS_Login;
+import hrms_g1.Gui.Profile_Management.Change_Password;
+
 /**
  *
  * @author tvanm
@@ -48,6 +51,11 @@ public class System_Admin_Menu extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("LOGOUT");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 30, -1, 29));
 
         jButton2.setBackground(new java.awt.Color(0, 0, 0));
@@ -65,6 +73,11 @@ public class System_Admin_Menu extends javax.swing.JFrame {
         jButton3.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 153, 255));
         jButton3.setText("Change Password");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 200, 40));
 
         jSeparator1.setForeground(new java.awt.Color(255, 255, 51));
@@ -81,6 +94,16 @@ public class System_Admin_Menu extends javax.swing.JFrame {
         newWindow.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        this.dispose();
+        new HRMS_Login().setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        new Change_Password(this, username).setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
