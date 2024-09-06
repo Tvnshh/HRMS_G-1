@@ -10,11 +10,11 @@ import javax.swing.JFrame;
  *
  * @author tvanm
  */
-public class Search_User_Account extends javax.swing.JFrame {
+public class Delete_User_Account extends javax.swing.JFrame {
     private String username;
     private final JFrame previousWindow;  
     
-    public Search_User_Account(JFrame previousWindow, String username) {
+    public Delete_User_Account(JFrame previousWindow, String username) {
         this.previousWindow = previousWindow;
         this.username = username;
         initComponents();
@@ -30,27 +30,22 @@ public class Search_User_Account extends javax.swing.JFrame {
     private void initComponents() {
 
         backButton = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jSeparator1 = new javax.swing.JSeparator();
         jLabel1 = new javax.swing.JLabel();
+        searchBarUsername = new javax.swing.JTextField();
+        searchUsername = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextPane1 = new javax.swing.JTextPane();
+        getName = new javax.swing.JTextPane();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextPane2 = new javax.swing.JTextPane();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        jTextPane4 = new javax.swing.JTextPane();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        jTextPane5 = new javax.swing.JTextPane();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        jTextPane6 = new javax.swing.JTextPane();
-        jSeparator2 = new javax.swing.JSeparator();
+        getPosition = new javax.swing.JTextPane();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        getDepartment = new javax.swing.JTextPane();
+        deleteButton = new javax.swing.JButton();
+        jSeparator3 = new javax.swing.JSeparator();
+        jSeparator1 = new javax.swing.JSeparator();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -64,85 +59,84 @@ public class Search_User_Account extends javax.swing.JFrame {
         getContentPane().add(backButton);
         backButton.setBounds(6, 17, 72, 23);
 
-        jTextField1.setText("jTextField1");
-        getContentPane().add(jTextField1);
-        jTextField1.setBounds(200, 350, 73, 22);
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(jComboBox1);
-        jComboBox1.setBounds(440, 350, 72, 22);
-        getContentPane().add(jSeparator1);
-        jSeparator1.setBounds(200, 50, 330, 10);
-
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(242, 242, 242));
-        jLabel1.setText("Name :");
+        jLabel1.setText("Delete Account");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(200, 80, 38, 15);
+        jLabel1.setBounds(310, 20, 122, 21);
+
+        searchBarUsername.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchBarUsernameActionPerformed(evt);
+            }
+        });
+        getContentPane().add(searchBarUsername);
+        searchBarUsername.setBounds(290, 80, 64, 22);
+
+        searchUsername.setText("Search");
+        getContentPane().add(searchUsername);
+        searchUsername.setBounds(380, 80, 72, 23);
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(242, 242, 242));
-        jLabel2.setText("Position :");
+        jLabel2.setText("Name :");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(200, 130, 50, 15);
+        jLabel2.setBounds(300, 120, 38, 15);
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(242, 242, 242));
-        jLabel3.setText("Department :");
+        jLabel3.setText("Position :");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(200, 180, 70, 15);
+        jLabel3.setBounds(300, 180, 50, 15);
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(242, 242, 242));
-        jLabel4.setText("Email :");
+        jLabel4.setText("Department :");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(200, 280, 37, 15);
+        jLabel4.setBounds(300, 240, 70, 15);
 
-        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(242, 242, 242));
-        jLabel5.setText("Address :");
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(200, 230, 51, 15);
-
-        jScrollPane1.setViewportView(jTextPane1);
+        jScrollPane1.setViewportView(getName);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(200, 150, 200, 22);
+        jScrollPane1.setBounds(300, 140, 153, 22);
 
-        jScrollPane2.setViewportView(jTextPane2);
+        jScrollPane2.setViewportView(getPosition);
 
         getContentPane().add(jScrollPane2);
-        jScrollPane2.setBounds(200, 300, 200, 22);
+        jScrollPane2.setBounds(300, 200, 153, 22);
 
-        jScrollPane4.setViewportView(jTextPane4);
+        jScrollPane3.setViewportView(getDepartment);
 
-        getContentPane().add(jScrollPane4);
-        jScrollPane4.setBounds(200, 250, 200, 22);
+        getContentPane().add(jScrollPane3);
+        jScrollPane3.setBounds(300, 260, 153, 22);
 
-        jScrollPane5.setViewportView(jTextPane5);
+        deleteButton.setText("Delete");
+        deleteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(deleteButton);
+        deleteButton.setBounds(330, 320, 72, 23);
+        getContentPane().add(jSeparator3);
+        jSeparator3.setBounds(170, 363, 400, 10);
+        getContentPane().add(jSeparator1);
+        jSeparator1.setBounds(180, 50, 370, 10);
 
-        getContentPane().add(jScrollPane5);
-        jScrollPane5.setBounds(200, 100, 200, 22);
-
-        jScrollPane6.setViewportView(jTextPane6);
-
-        getContentPane().add(jScrollPane6);
-        jScrollPane6.setBounds(200, 200, 200, 22);
-        getContentPane().add(jSeparator2);
-        jSeparator2.setBounds(200, 380, 330, 10);
-
-        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(242, 242, 242));
-        jLabel6.setText("Search User Account");
+        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\images\\profile_management_km.jpg")); // NOI18N
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(290, 20, 170, 21);
-
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\images\\profile_management_km.jpg")); // NOI18N
-        getContentPane().add(jLabel7);
-        jLabel7.setBounds(0, 0, 730, 410);
+        jLabel6.setBounds(-2, -4, 740, 410);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void searchBarUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBarUsernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_searchBarUsernameActionPerformed
+
+    private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_deleteButtonActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         this.setVisible(false);
@@ -152,26 +146,21 @@ public class Search_User_Account extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backButton;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JButton deleteButton;
+    private javax.swing.JTextPane getDepartment;
+    private javax.swing.JTextPane getName;
+    private javax.swing.JTextPane getPosition;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextPane jTextPane1;
-    private javax.swing.JTextPane jTextPane2;
-    private javax.swing.JTextPane jTextPane4;
-    private javax.swing.JTextPane jTextPane5;
-    private javax.swing.JTextPane jTextPane6;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JTextField searchBarUsername;
+    private javax.swing.JButton searchUsername;
     // End of variables declaration//GEN-END:variables
 }
