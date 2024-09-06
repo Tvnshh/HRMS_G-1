@@ -89,10 +89,14 @@ public class Search_Payroll_Details extends javax.swing.JFrame {
         jLabel6.setText("Net Salary :");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 150, -1, -1));
 
+        jScrollPane2.setMinimumSize(new java.awt.Dimension(64, 21));
+
         grossSalary.setFont(new java.awt.Font("Constantia", 0, 12)); // NOI18N
         jScrollPane2.setViewportView(grossSalary);
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, -1, -1));
+
+        jScrollPane3.setMinimumSize(new java.awt.Dimension(64, 21));
 
         netSalary.setFont(new java.awt.Font("Constantia", 0, 12)); // NOI18N
         jScrollPane3.setViewportView(netSalary);
