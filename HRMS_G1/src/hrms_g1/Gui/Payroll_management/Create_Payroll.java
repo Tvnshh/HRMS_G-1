@@ -10,6 +10,7 @@ import Users.Employee;
 import javax.swing.JFrame;
 import java.text.DecimalFormat;
 import java.time.LocalDate;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -39,21 +40,16 @@ public class Create_Payroll extends javax.swing.JFrame {
         getUsername = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         getGrossSalary = new javax.swing.JTextField();
+        setSOCSO = new javax.swing.JTextPane();
+        setEPF = new javax.swing.JTextPane();
+        setEIS = new javax.swing.JTextPane();
+        setAnnualTax = new javax.swing.JTextPane();
+        setNetSalary = new javax.swing.JTextPane();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        setSOCSO = new javax.swing.JTextPane();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        setEPF = new javax.swing.JTextPane();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        setEIS = new javax.swing.JTextPane();
-        setAnnualTex = new javax.swing.JScrollPane();
-        setAnnualTax = new javax.swing.JTextPane();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        setNetSalary = new javax.swing.JTextPane();
         searchUsername = new javax.swing.JButton();
         createPayroll = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
@@ -95,6 +91,31 @@ public class Create_Payroll extends javax.swing.JFrame {
         getGrossSalary.setFont(new java.awt.Font("Constantia", 0, 12)); // NOI18N
         getContentPane().add(getGrossSalary, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 100, 71, -1));
 
+        setSOCSO.setFont(new java.awt.Font("Constantia", 0, 12)); // NOI18N
+        setSOCSO.setMinimumSize(new java.awt.Dimension(64, 21));
+        setSOCSO.setPreferredSize(new java.awt.Dimension(64, 21));
+        getContentPane().add(setSOCSO, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 180, -1, -1));
+
+        setEPF.setFont(new java.awt.Font("Constantia", 0, 12)); // NOI18N
+        setEPF.setMinimumSize(new java.awt.Dimension(64, 21));
+        setEPF.setPreferredSize(new java.awt.Dimension(64, 21));
+        getContentPane().add(setEPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 150, -1, -1));
+
+        setEIS.setFont(new java.awt.Font("Constantia", 0, 12)); // NOI18N
+        setEIS.setMinimumSize(new java.awt.Dimension(64, 21));
+        setEIS.setPreferredSize(new java.awt.Dimension(64, 21));
+        getContentPane().add(setEIS, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 210, -1, -1));
+
+        setAnnualTax.setFont(new java.awt.Font("Constantia", 0, 12)); // NOI18N
+        setAnnualTax.setMinimumSize(new java.awt.Dimension(64, 21));
+        setAnnualTax.setPreferredSize(new java.awt.Dimension(64, 21));
+        getContentPane().add(setAnnualTax, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 250, -1, -1));
+
+        setNetSalary.setFont(new java.awt.Font("Constantia", 0, 12)); // NOI18N
+        setNetSalary.setMinimumSize(new java.awt.Dimension(64, 21));
+        setNetSalary.setPreferredSize(new java.awt.Dimension(64, 21));
+        getContentPane().add(setNetSalary, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 280, -1, -1));
+
         jLabel3.setFont(new java.awt.Font("Constantia", 1, 12)); // NOI18N
         jLabel3.setText("EPF :");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(192, 147, -1, -1));
@@ -114,31 +135,6 @@ public class Create_Payroll extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Constantia", 1, 12)); // NOI18N
         jLabel7.setText("Net Salary :");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 283, -1, -1));
-
-        setSOCSO.setFont(new java.awt.Font("Constantia", 0, 12)); // NOI18N
-        jScrollPane1.setViewportView(setSOCSO);
-
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 175, -1, -1));
-
-        setEPF.setFont(new java.awt.Font("Constantia", 0, 12)); // NOI18N
-        jScrollPane2.setViewportView(setEPF);
-
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 147, -1, -1));
-
-        setEIS.setFont(new java.awt.Font("Constantia", 0, 12)); // NOI18N
-        jScrollPane3.setViewportView(setEIS);
-
-        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 209, -1, -1));
-
-        setAnnualTax.setFont(new java.awt.Font("Constantia", 0, 12)); // NOI18N
-        setAnnualTex.setViewportView(setAnnualTax);
-
-        getContentPane().add(setAnnualTex, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 243, -1, -1));
-
-        setNetSalary.setFont(new java.awt.Font("Constantia", 0, 12)); // NOI18N
-        jScrollPane5.setViewportView(setNetSalary);
-
-        getContentPane().add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 277, -1, -1));
 
         searchUsername.setBackground(new java.awt.Color(0, 0, 0));
         searchUsername.setFont(new java.awt.Font("Constantia", 1, 12)); // NOI18N
@@ -195,8 +191,7 @@ public class Create_Payroll extends javax.swing.JFrame {
         payroll.createPayroll(getUsername.getText(), Integer.parseInt(getGrossSalary.getText()));
         this.dispose();
         previousWindow.setVisible(true);
-
-        
+        JOptionPane.showMessageDialog(this, "Payroll created successfully!");
     }//GEN-LAST:event_createPayrollActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -256,15 +251,10 @@ public class Create_Payroll extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JButton searchUsername;
     private javax.swing.JTextPane setAnnualTax;
-    private javax.swing.JScrollPane setAnnualTex;
     private javax.swing.JTextPane setEIS;
     private javax.swing.JTextPane setEPF;
     private javax.swing.JTextPane setNetSalary;
