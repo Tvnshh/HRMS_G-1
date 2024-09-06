@@ -18,6 +18,23 @@ public class View_Profile extends javax.swing.JFrame {
         this.previousWindow = previousWindow;
         this.username = username;
         initComponents();
+        
+        HumanResourceOfficer hr = new HumanResourceOfficer();
+        String[] userDetails = hr.retrieveUserDetails(username);
+
+        if (userDetails != null) {
+            getUsername.setText(userDetails[1]);
+            getName.setText(userDetails[5]);
+            getContact.setText(userDetails[6]);
+            getEmail.setText(userDetails[7]);
+            getAddress.setText(userDetails[8]);
+            getPosition.setText(userDetails[11]); 
+            getDepartment.setText(userDetails[12]);
+            getEmergencyContact.setText(userDetails[9]);
+        } else {
+            javax.swing.JOptionPane.showMessageDialog(this, "User not found!");
+        }
+        
     }
 
     /**
@@ -39,20 +56,23 @@ public class View_Profile extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextPane1 = new javax.swing.JTextPane();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
+        getUsername = new javax.swing.JTextPane();
+        getName = new javax.swing.JTextField();
+        getEmail = new javax.swing.JTextField();
+        getContact = new javax.swing.JTextField();
+        getEmergencyContact = new javax.swing.JTextField();
+        getAddress = new javax.swing.JTextField();
+        getPosition = new javax.swing.JTextField();
+        getDepartment = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         jLabel9 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(727, 405));
+        setPreferredSize(new java.awt.Dimension(727, 405));
+        setResizable(false);
         getContentPane().setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
@@ -112,42 +132,42 @@ public class View_Profile extends javax.swing.JFrame {
         getContentPane().add(jLabel8);
         jLabel8.setBounds(390, 140, 70, 15);
 
-        jScrollPane1.setViewportView(jTextPane1);
+        jScrollPane1.setViewportView(getUsername);
 
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(170, 110, 180, 22);
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        getName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                getNameActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1);
-        jTextField1.setBounds(170, 160, 180, 22);
+        getContentPane().add(getName);
+        getName.setBounds(170, 160, 180, 22);
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        getEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                getEmailActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField2);
-        jTextField2.setBounds(170, 210, 180, 22);
-        getContentPane().add(jTextField3);
-        jTextField3.setBounds(170, 260, 180, 22);
+        getContentPane().add(getEmail);
+        getEmail.setBounds(170, 210, 180, 22);
+        getContentPane().add(getContact);
+        getContact.setBounds(170, 260, 180, 22);
 
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        getEmergencyContact.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                getEmergencyContactActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField4);
-        jTextField4.setBounds(390, 210, 180, 22);
-        getContentPane().add(jTextField5);
-        jTextField5.setBounds(390, 260, 180, 22);
-        getContentPane().add(jTextField6);
-        jTextField6.setBounds(390, 110, 180, 22);
-        getContentPane().add(jTextField7);
-        jTextField7.setBounds(390, 160, 180, 22);
+        getContentPane().add(getEmergencyContact);
+        getEmergencyContact.setBounds(390, 210, 180, 22);
+        getContentPane().add(getAddress);
+        getAddress.setBounds(390, 260, 180, 22);
+        getContentPane().add(getPosition);
+        getPosition.setBounds(390, 110, 180, 22);
+        getContentPane().add(getDepartment);
+        getDepartment.setBounds(390, 160, 180, 22);
         getContentPane().add(jSeparator1);
         jSeparator1.setBounds(170, 60, 400, 10);
         getContentPane().add(jSeparator2);
@@ -166,26 +186,34 @@ public class View_Profile extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void getNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_getNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_getNameActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void getEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_getEmailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_getEmailActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void getEmergencyContactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_getEmergencyContactActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_getEmergencyContactActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
-        this.setVisible(false);
+        this.dispose();
         previousWindow.setVisible(true);
     }//GEN-LAST:event_backButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backButton;
+    private javax.swing.JTextField getAddress;
+    private javax.swing.JTextField getContact;
+    private javax.swing.JTextField getDepartment;
+    private javax.swing.JTextField getEmail;
+    private javax.swing.JTextField getEmergencyContact;
+    private javax.swing.JTextField getName;
+    private javax.swing.JTextField getPosition;
+    private javax.swing.JTextPane getUsername;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
@@ -199,13 +227,5 @@ public class View_Profile extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextPane jTextPane1;
     // End of variables declaration//GEN-END:variables
 }

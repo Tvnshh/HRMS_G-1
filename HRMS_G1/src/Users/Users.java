@@ -41,9 +41,9 @@ public abstract class Users {
 
     public static void main(String[] args) {
         //Testing
-//        SystemAdministrator testObj = new SystemAdministrator();
+        SystemAdministrator testObj = new SystemAdministrator();
         
-//        testObj.createUser(2, "Tarun Krishnan", "1234", "Tarun"); //Works
+        testObj.createUser(2, "Tarun Krishnan", "1234", "Tarun"); //Works
 
 //        String[] testArray = testObj.retrieveUserDetails("Tarun Krishnan");
 //        System.out.println(Arrays.toString(testArray)); //Works

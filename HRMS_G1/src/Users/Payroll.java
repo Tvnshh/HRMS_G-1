@@ -43,7 +43,7 @@ class Payroll {
         this.socso = Double.parseDouble(df.format(grossSalary * 0.005));
         this.eis = Double.parseDouble(df.format(grossSalary * 0.002));
         this.annualTax = Double.parseDouble(df.format(grossSalary * 0.41666));
-        this.netSalary = Double.parseDouble(df.format(grossSalary - epf - socso - eis - annualTax));
+        this.netSalary = Double.parseDouble(df.format(grossSalary - epf - socso - eis - (annualTax/12)));
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         this.date = myObj.format(formatter);
     }

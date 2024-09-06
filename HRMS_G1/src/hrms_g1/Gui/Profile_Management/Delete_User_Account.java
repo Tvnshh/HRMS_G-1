@@ -29,6 +29,7 @@ public class Delete_User_Account extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        setUsername = new javax.swing.JTextField();
         backButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         searchBarUsername = new javax.swing.JTextField();
@@ -48,6 +49,9 @@ public class Delete_User_Account extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(727, 405));
+        setPreferredSize(new java.awt.Dimension(727, 405));
+        setResizable(false);
         getContentPane().setLayout(null);
 
         backButton.setText("Back");
@@ -74,6 +78,11 @@ public class Delete_User_Account extends javax.swing.JFrame {
         searchBarUsername.setBounds(290, 80, 64, 22);
 
         searchUsername.setText("Search");
+        searchUsername.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchUsernameActionPerformed(evt);
+            }
+        });
         getContentPane().add(searchUsername);
         searchUsername.setBounds(380, 80, 72, 23);
 
@@ -131,17 +140,35 @@ public class Delete_User_Account extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void searchBarUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBarUsernameActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_searchBarUsernameActionPerformed
 
     private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
-        // TODO add your handling code here:
+        SystemAdministrator admin = new SystemAdministrator();
+        admin.deleteUserAccount(setUsername.getText());
+        javax.swing.JOptionPane.showMessageDialog(this, "User successfully Deleted!");
+        this.dispose();
+        previousWindow.setVisible(true);
     }//GEN-LAST:event_deleteButtonActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
-        this.setVisible(false);
+        this.dispose();
         previousWindow.setVisible(true);
     }//GEN-LAST:event_backButtonActionPerformed
+
+    private void searchUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchUsernameActionPerformed
+        SystemAdministrator admin = new SystemAdministrator();
+        String[] userDetails = admin.retrieveUserDetails(searchBarUsername.getText());
+
+        if (userDetails != null && userDetails.length >= 13) {
+            getName.setText(userDetails[5]);
+            getPosition.setText(userDetails[11]); 
+            getDepartment.setText(userDetails[12]);
+            setUsername.setText(searchBarUsername.getText());
+        } else {
+            javax.swing.JOptionPane.showMessageDialog(this, "User not found or data incomplete!");
+        }
+    }//GEN-LAST:event_searchUsernameActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -162,5 +189,6 @@ public class Delete_User_Account extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JTextField searchBarUsername;
     private javax.swing.JButton searchUsername;
+    private javax.swing.JTextField setUsername;
     // End of variables declaration//GEN-END:variables
 }

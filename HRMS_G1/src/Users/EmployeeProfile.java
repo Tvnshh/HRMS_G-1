@@ -93,7 +93,8 @@ class EmployeeProfile {
 
     public void setEmployeeInfo() {
         String filepath = "user_profile.txt";
-        if (employeeDetails == null){
+        System.out.println(employeeDetails.toString());
+        if (employeeDetails.size()<2){
             try (BufferedReader br = new BufferedReader(new FileReader(filepath))) {
                 String line;
                 while ((line = br.readLine()) != null) {
@@ -105,6 +106,7 @@ class EmployeeProfile {
                 Logger.getLogger(EmployeeProfile.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+        System.out.println(employeeDetails.toString());
         
         boolean userFound = false;
         for (int i = 0; i < employeeDetails.size(); i++) {
@@ -117,6 +119,7 @@ class EmployeeProfile {
         if (!userFound){
             employeeDetails.add(String.join(",", getEmployeeInfo()));
         }
+        System.out.println(employeeDetails.toString());
         try (FileWriter writer = new FileWriter(filepath, false)) {
             for (String employee : employeeDetails) {
                 writer.write(employee + "\n");

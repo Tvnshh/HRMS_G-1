@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package hrms_g1.Gui.Profile_Management;
+import Users.HumanResourceOfficer;
 import Users.SystemAdministrator;
 import javax.swing.JFrame;
 
@@ -29,35 +30,38 @@ public class Update_Account_Details extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField1 = new javax.swing.JTextField();
+        usernameSearchBar = new javax.swing.JTextField();
         backButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextPane1 = new javax.swing.JTextPane();
+        getName = new javax.swing.JTextPane();
         jLabel2 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        getPosition = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jComboBox3 = new javax.swing.JComboBox<>();
-        jButton3 = new javax.swing.JButton();
+        getDepartment = new javax.swing.JComboBox<>();
+        getRole = new javax.swing.JComboBox<>();
+        changeButton = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel5 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
-        jButton4 = new javax.swing.JButton();
+        searchButton = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(727, 405));
+        setPreferredSize(new java.awt.Dimension(727, 405));
+        setResizable(false);
         getContentPane().setLayout(null);
 
-        jTextField1.setText("jTextField1");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        usernameSearchBar.setText("Username");
+        usernameSearchBar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                usernameSearchBarActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1);
-        jTextField1.setBounds(210, 70, 73, 22);
+        getContentPane().add(usernameSearchBar);
+        usernameSearchBar.setBounds(280, 70, 80, 22);
 
         backButton.setText("Back");
         backButton.addActionListener(new java.awt.event.ActionListener() {
@@ -74,7 +78,7 @@ public class Update_Account_Details extends javax.swing.JFrame {
         getContentPane().add(jLabel1);
         jLabel1.setBounds(280, 110, 38, 15);
 
-        jScrollPane1.setViewportView(jTextPane1);
+        jScrollPane1.setViewportView(getName);
 
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(280, 130, 170, 22);
@@ -85,9 +89,9 @@ public class Update_Account_Details extends javax.swing.JFrame {
         getContentPane().add(jLabel2);
         jLabel2.setBounds(280, 160, 50, 15);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Manager", "Officer", "Recruitment", "Specialist", "Clerk", "Intern", "Staff Member", "Trainee", "Junior Employee" }));
-        getContentPane().add(jComboBox1);
-        jComboBox1.setBounds(280, 180, 170, 22);
+        getPosition.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Manager", "Officer", "Recruitment", "Specialist", "Clerk", "Intern", "Staff Member", "Trainee", "Junior Employee" }));
+        getContentPane().add(getPosition);
+        getPosition.setBounds(280, 180, 170, 22);
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(242, 242, 242));
@@ -99,19 +103,24 @@ public class Update_Account_Details extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(242, 242, 242));
         jLabel4.setText("Role :");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(280, 260, 32, 15);
+        jLabel4.setBounds(280, 260, 50, 15);
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "HR Department", "Payroll Department", "General Employee", " " }));
-        getContentPane().add(jComboBox2);
-        jComboBox2.setBounds(280, 230, 170, 22);
+        getDepartment.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "HR Department", "Payroll Department", "General Employee", " " }));
+        getContentPane().add(getDepartment);
+        getDepartment.setBounds(280, 230, 170, 22);
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Manager", "HR Officer", "Department Manager", "Employee", " " }));
-        getContentPane().add(jComboBox3);
-        jComboBox3.setBounds(280, 280, 170, 22);
+        getRole.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "HR Officer", "Department Manager", "Payroll Officer", "General Employee" }));
+        getContentPane().add(getRole);
+        getRole.setBounds(280, 280, 170, 22);
 
-        jButton3.setText("Change");
-        getContentPane().add(jButton3);
-        jButton3.setBounds(320, 320, 72, 23);
+        changeButton.setText("Change");
+        changeButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                changeButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(changeButton);
+        changeButton.setBounds(320, 320, 72, 23);
         getContentPane().add(jSeparator1);
         jSeparator1.setBounds(190, 60, 335, 10);
 
@@ -123,9 +132,9 @@ public class Update_Account_Details extends javax.swing.JFrame {
         getContentPane().add(jSeparator2);
         jSeparator2.setBounds(180, 360, 350, 10);
 
-        jButton4.setText("jButton4");
-        getContentPane().add(jButton4);
-        jButton4.setBounds(430, 70, 75, 23);
+        searchButton.setText("Search");
+        getContentPane().add(searchButton);
+        searchButton.setBounds(370, 70, 72, 23);
 
         jLabel6.setIcon(new javax.swing.ImageIcon("C:\\images\\profile_management_km.jpg")); // NOI18N
         getContentPane().add(jLabel6);
@@ -134,23 +143,67 @@ public class Update_Account_Details extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void usernameSearchBarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameSearchBarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+        HumanResourceOfficer hr = new HumanResourceOfficer();
+        String username = usernameSearchBar.getText();
+
+        String[] userDetails = hr.retrieveUserDetails(username);
+        
+        String[] roles = {"Admin", "HR Officer", "Department Manager", "Payroll Officer", "General Employee"}; 
+        
+        if (userDetails != null) {
+            getName.setText(userDetails[5]);
+            getPosition.setSelectedItem(userDetails[11]); 
+            getDepartment.setSelectedItem(userDetails[12]);
+            getRole.setSelectedItem(roles[Integer.parseInt(userDetails[0])]);
+        } else {
+            javax.swing.JOptionPane.showMessageDialog(this, "User not found!");
+        }
+    }//GEN-LAST:event_usernameSearchBarActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
-        this.setVisible(false);
+        this.dispose();
         previousWindow.setVisible(true);
     }//GEN-LAST:event_backButtonActionPerformed
+
+    private void changeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changeButtonActionPerformed
+        HumanResourceOfficer hr = new HumanResourceOfficer();
+        String username = usernameSearchBar.getText();
+        
+        String[] userDetails = hr.retrieveUserDetails(username);
+        userDetails[5] = getName.getText();
+        userDetails[11] = getPosition.getSelectedItem().toString();
+        userDetails[12] = getDepartment.getSelectedItem().toString();
+        int role;
+        switch (getRole.getSelectedItem().toString()) {
+            case "Admin" -> role = 1;
+            case "HR Officer" -> role = 2;
+            case "Department Manager" -> role = 3;
+            case "Payroll Officer" -> role = 4;
+            case "General Employee" -> role = 5;
+            default -> {
+                role = 5;
+                System.out.println("Invalid Department");
+                return;
+            }
+        }
+        userDetails[0] = Integer.toString(role);
+        
+        hr.updateEmployeeProfile(userDetails);
+        javax.swing.JOptionPane.showMessageDialog(this, "Details changed successfully!");
+        this.dispose();
+        previousWindow.setVisible(true);
+    }//GEN-LAST:event_changeButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backButton;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
+    private javax.swing.JButton changeButton;
+    private javax.swing.JComboBox<String> getDepartment;
+    private javax.swing.JTextPane getName;
+    private javax.swing.JComboBox<String> getPosition;
+    private javax.swing.JComboBox<String> getRole;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -160,7 +213,7 @@ public class Update_Account_Details extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextPane jTextPane1;
+    private javax.swing.JButton searchButton;
+    private javax.swing.JTextField usernameSearchBar;
     // End of variables declaration//GEN-END:variables
 }

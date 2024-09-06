@@ -223,7 +223,7 @@ public class Create_User_Account extends javax.swing.JFrame {
         hrOfficer.createEmployeeProfile(role, employeeUsername, hr.retrieveUserDetails(employeeUsername)[2], loginAttempts, accountStatus, name, contact, email, address, emergencyContact, workExperience, position, department, monthlyGSalary, gender);
 
         javax.swing.JOptionPane.showMessageDialog(this, "User account created successfully!");
-        this.setVisible(false);
+        this.dispose();
         previousWindow.setVisible(true); 
     }//GEN-LAST:event_createUserAccountActionPerformed
 
@@ -232,11 +232,9 @@ public class Create_User_Account extends javax.swing.JFrame {
     }//GEN-LAST:event_getNameActionPerformed
 
     private void searchUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchUsernameActionPerformed
-        // Retrieve the username from the input field
         HumanResourceOfficer hr = new HumanResourceOfficer();
         String username = usernameSearch.getText();
 
-        // Call the method to retrieve user details, which returns an array
         String[] userDetails = hr.retrieveUserDetails(username);
 
         if (userDetails != null) {
@@ -254,7 +252,7 @@ public class Create_User_Account extends javax.swing.JFrame {
     }//GEN-LAST:event_searchUsernameActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
-        this.setVisible(false);
+        this.dispose();
         previousWindow.setVisible(true);
     }//GEN-LAST:event_backButtonActionPerformed
 

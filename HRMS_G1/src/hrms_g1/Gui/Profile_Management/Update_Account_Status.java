@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package hrms_g1.Gui.Profile_Management;
+import Users.HumanResourceOfficer;
 import Users.SystemAdministrator;
 import javax.swing.JFrame;
 
@@ -29,30 +30,35 @@ public class Update_Account_Status extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField1 = new javax.swing.JTextField();
+        setUsername = new javax.swing.JTextField();
+        searchBarUsername = new javax.swing.JTextField();
         backButton = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        searchButton = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextPane1 = new javax.swing.JTextPane();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        getAccountStatus = new javax.swing.JTextPane();
+        disableAccount = new javax.swing.JButton();
+        enableAccount = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
         jLabel4 = new javax.swing.JLabel();
 
+        setUsername.setText("jTextField1");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(727, 405));
+        setPreferredSize(new java.awt.Dimension(727, 405));
+        setResizable(false);
         getContentPane().setLayout(null);
 
-        jTextField1.setText("jTextField1");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        searchBarUsername.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                searchBarUsernameActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1);
-        jTextField1.setBounds(210, 80, 73, 22);
+        getContentPane().add(searchBarUsername);
+        searchBarUsername.setBounds(250, 80, 71, 22);
 
         backButton.setText("Back");
         backButton.addActionListener(new java.awt.event.ActionListener() {
@@ -63,9 +69,14 @@ public class Update_Account_Status extends javax.swing.JFrame {
         getContentPane().add(backButton);
         backButton.setBounds(6, 17, 72, 23);
 
-        jButton2.setText("jButton2");
-        getContentPane().add(jButton2);
-        jButton2.setBounds(410, 80, 75, 23);
+        searchButton.setText("Search");
+        searchButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(searchButton);
+        searchButton.setBounds(350, 80, 72, 23);
         getContentPane().add(jSeparator1);
         jSeparator1.setBounds(210, 70, 275, 10);
 
@@ -75,18 +86,28 @@ public class Update_Account_Status extends javax.swing.JFrame {
         getContentPane().add(jLabel1);
         jLabel1.setBounds(220, 130, 86, 15);
 
-        jScrollPane1.setViewportView(jTextPane1);
+        jScrollPane1.setViewportView(getAccountStatus);
 
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(320, 130, 177, 22);
 
-        jButton3.setText("Disable");
-        getContentPane().add(jButton3);
-        jButton3.setBounds(310, 210, 72, 23);
+        disableAccount.setText("Disable");
+        disableAccount.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                disableAccountActionPerformed(evt);
+            }
+        });
+        getContentPane().add(disableAccount);
+        disableAccount.setBounds(310, 210, 72, 23);
 
-        jButton4.setText("Enable");
-        getContentPane().add(jButton4);
-        jButton4.setBounds(310, 180, 72, 23);
+        enableAccount.setText("Enable");
+        enableAccount.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                enableAccountActionPerformed(evt);
+            }
+        });
+        getContentPane().add(enableAccount);
+        enableAccount.setBounds(310, 180, 72, 23);
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(242, 242, 242));
@@ -103,28 +124,79 @@ public class Update_Account_Status extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void searchBarUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBarUsernameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_searchBarUsernameActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
-        this.setVisible(false);
+        this.dispose();
         previousWindow.setVisible(true);
     }//GEN-LAST:event_backButtonActionPerformed
+
+    private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
+        SystemAdministrator admin = new SystemAdministrator();
+        String[] userDetails = admin.retrieveUserDetails(searchBarUsername.getText());
+
+        if (userDetails != null && userDetails.length >= 13) {
+            getAccountStatus.setText(userDetails[4].equals("1")? "Enabled" : "Disabled");
+            setUsername.setText(searchBarUsername.getText());
+        } else {
+            javax.swing.JOptionPane.showMessageDialog(this, "User not found or data incomplete!");
+        }
+        if ("1".equals(userDetails[4])) {
+            enableAccount.setEnabled(false); 
+            disableAccount.setEnabled(true); 
+        } else if ("0".equals(userDetails[4])) {
+            disableAccount.setEnabled(false); 
+            enableAccount.setEnabled(true); 
+        } else {
+            enableAccount.setEnabled(false);
+            disableAccount.setEnabled(false);
+        }        
+    }//GEN-LAST:event_searchButtonActionPerformed
+
+    private void enableAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enableAccountActionPerformed
+        HumanResourceOfficer hr = new HumanResourceOfficer();
+        String username = searchBarUsername.getText();
+        
+        String[] userDetails = hr.retrieveUserDetails(username);
+        
+        userDetails[4] = "1";
+                
+        hr.updateEmployeeProfile(userDetails);
+        javax.swing.JOptionPane.showMessageDialog(this, "Status changed successfully!");
+        this.dispose();
+        previousWindow.setVisible(true);
+    }//GEN-LAST:event_enableAccountActionPerformed
+
+    private void disableAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_disableAccountActionPerformed
+        HumanResourceOfficer hr = new HumanResourceOfficer();
+        String username = searchBarUsername.getText();
+        
+        String[] userDetails = hr.retrieveUserDetails(username);
+        
+        userDetails[4] = "0";
+                
+        hr.updateEmployeeProfile(userDetails);
+        javax.swing.JOptionPane.showMessageDialog(this, "Status changed successfully!");
+        this.dispose();
+        previousWindow.setVisible(true);
+    }//GEN-LAST:event_disableAccountActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backButton;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton disableAccount;
+    private javax.swing.JButton enableAccount;
+    private javax.swing.JTextPane getAccountStatus;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextPane jTextPane1;
+    private javax.swing.JTextField searchBarUsername;
+    private javax.swing.JButton searchButton;
+    private javax.swing.JTextField setUsername;
     // End of variables declaration//GEN-END:variables
 }

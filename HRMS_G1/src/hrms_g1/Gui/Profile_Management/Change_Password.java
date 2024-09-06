@@ -148,7 +148,7 @@ public class Change_Password extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(this, "Old password is incorrect.");
         }
-        this.setVisible(false);
+        this.dispose();
         previousWindow.setVisible(true);
     }//GEN-LAST:event_changePasswordActionPerformed
 

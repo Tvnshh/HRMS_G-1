@@ -134,9 +134,10 @@ public class Create_User_Account_Admin extends javax.swing.JFrame {
 
         // Get the selected department and convert it to the role number
         String department = (String) getRole.getSelectedItem();
-        int role = 0;
+        int role;
 
         switch (department) {
+            case "Admin" -> role = 1;
             case "HR Officer" -> role = 2;
             case "Department Manager" -> role = 3;
             case "Payroll Officer" -> role = 4;
@@ -151,8 +152,8 @@ public class Create_User_Account_Admin extends javax.swing.JFrame {
         SystemAdministrator systemAdmin = new SystemAdministrator();
         systemAdmin.createUser(role, employeeUsername, employeePassword, name);
 
-        System.out.println("User created successfully!");
-        this.setVisible(false);
+        javax.swing.JOptionPane.showMessageDialog(this, "User Created Successfully!");
+        this.dispose();
         previousWindow.setVisible(true);
     }//GEN-LAST:event_createUserActionPerformed
 
@@ -161,7 +162,7 @@ public class Create_User_Account_Admin extends javax.swing.JFrame {
     }//GEN-LAST:event_getNameActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
-        this.setVisible(false);
+        this.dispose();
         previousWindow.setVisible(true);
     }//GEN-LAST:event_backButtonActionPerformed
 
