@@ -28,11 +28,10 @@ public class Search_Payroll_Details extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        grossSalary = new javax.swing.JTextPane();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        netSalary = new javax.swing.JTextPane();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel8 = new javax.swing.JLabel();
+        netSalary = new javax.swing.JTextField();
+        grossSalary = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
 
@@ -90,18 +89,7 @@ public class Search_Payroll_Details extends javax.swing.JFrame {
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 150, -1, -1));
 
         jScrollPane2.setMinimumSize(new java.awt.Dimension(64, 21));
-
-        grossSalary.setFont(new java.awt.Font("Constantia", 0, 12)); // NOI18N
-        jScrollPane2.setViewportView(grossSalary);
-
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, -1, -1));
-
-        jScrollPane3.setMinimumSize(new java.awt.Dimension(64, 21));
-
-        netSalary.setFont(new java.awt.Font("Constantia", 0, 12)); // NOI18N
-        jScrollPane3.setViewportView(netSalary);
-
-        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 180, -1, -1));
 
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
         getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 270, -1));
@@ -109,6 +97,8 @@ public class Search_Payroll_Details extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Constantia", 1, 18)); // NOI18N
         jLabel8.setText("Search Payroll Details");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, -1, -1));
+        getContentPane().add(netSalary, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 180, -1, -1));
+        getContentPane().add(grossSalary, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Constantia", 0, 12)); // NOI18N
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -141,7 +131,7 @@ public class Search_Payroll_Details extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextPane grossSalary;
+    private javax.swing.JTextField grossSalary;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -154,10 +144,9 @@ public class Search_Payroll_Details extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextPane jTextPane1;
-    private javax.swing.JTextPane netSalary;
+    private javax.swing.JTextField netSalary;
     private javax.swing.JButton searchButton;
     private javax.swing.JSpinner selectMonth;
     private javax.swing.JTextField usernameField;

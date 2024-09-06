@@ -17,7 +17,6 @@ public class Update_Payroll extends javax.swing.JFrame {
 
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        getUsername = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         setMonth = new javax.swing.JSpinner();
         jLabel3 = new javax.swing.JLabel();
@@ -26,19 +25,20 @@ public class Update_Payroll extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        epf = new javax.swing.JTextPane();
         jScrollPane3 = new javax.swing.JScrollPane();
-        socso = new javax.swing.JTextPane();
         jScrollPane4 = new javax.swing.JScrollPane();
-        eis = new javax.swing.JTextPane();
         jScrollPane5 = new javax.swing.JScrollPane();
-        setAnnualTax = new javax.swing.JTextPane();
-        grossSalary = new javax.swing.JTextField();
         searchDetails = new javax.swing.JButton();
         updateDetails = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
+        getUsername = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
+        grossSalary = new javax.swing.JTextField();
+        socso = new javax.swing.JTextField();
+        eis = new javax.swing.JTextField();
+        setAnnualTax = new javax.swing.JTextField();
+        epf = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -58,10 +58,6 @@ public class Update_Payroll extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Constantia", 1, 12)); // NOI18N
         jLabel1.setText("Username :");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, -1, -1));
-
-        getUsername.setFont(new java.awt.Font("Constantia", 0, 12)); // NOI18N
-        getUsername.setToolTipText("");
-        getContentPane().add(getUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Constantia", 1, 12)); // NOI18N
         jLabel2.setText("Month :");
@@ -89,30 +85,10 @@ public class Update_Payroll extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Constantia", 1, 12)); // NOI18N
         jLabel7.setText("Annual Tax :");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, -1, -1));
-
-        epf.setFont(new java.awt.Font("Constantia", 0, 12)); // NOI18N
-        epf.setAutoscrolls(false);
-        jScrollPane2.setViewportView(epf);
-
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 130, -1, -1));
-
-        socso.setFont(new java.awt.Font("Constantia", 0, 12)); // NOI18N
-        socso.setAutoscrolls(false);
-        jScrollPane3.setViewportView(socso);
-
         getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, -1, -1));
-
-        eis.setFont(new java.awt.Font("Constantia", 0, 12)); // NOI18N
-        eis.setAutoscrolls(false);
-        jScrollPane4.setViewportView(eis);
-
         getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 190, -1, -1));
-
-        setAnnualTax.setFont(new java.awt.Font("Constantia", 0, 12)); // NOI18N
-        jScrollPane5.setViewportView(setAnnualTax);
-
         getContentPane().add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 220, -1, -1));
-        getContentPane().add(grossSalary, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, -1, -1));
 
         searchDetails.setBackground(new java.awt.Color(0, 0, 0));
         searchDetails.setFont(new java.awt.Font("Constantia", 0, 12)); // NOI18N
@@ -143,12 +119,42 @@ public class Update_Payroll extends javax.swing.JFrame {
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
         getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 27, 300, -1));
 
+        getUsername.setMinimumSize(new java.awt.Dimension(70, 22));
+        getUsername.setPreferredSize(new java.awt.Dimension(70, 22));
+        getUsername.setRequestFocusEnabled(false);
+        getContentPane().add(getUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, -1, -1));
+
         jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 jLabel9MousePressed(evt);
             }
         });
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        grossSalary.setMinimumSize(new java.awt.Dimension(70, 22));
+        grossSalary.setPreferredSize(new java.awt.Dimension(70, 22));
+        grossSalary.setRequestFocusEnabled(false);
+        getContentPane().add(grossSalary, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, -1, -1));
+
+        socso.setMinimumSize(new java.awt.Dimension(70, 22));
+        socso.setPreferredSize(new java.awt.Dimension(70, 22));
+        socso.setRequestFocusEnabled(false);
+        getContentPane().add(socso, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, -1, -1));
+
+        eis.setMinimumSize(new java.awt.Dimension(70, 22));
+        eis.setPreferredSize(new java.awt.Dimension(70, 22));
+        eis.setRequestFocusEnabled(false);
+        getContentPane().add(eis, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 190, -1, -1));
+
+        setAnnualTax.setMinimumSize(new java.awt.Dimension(70, 22));
+        setAnnualTax.setPreferredSize(new java.awt.Dimension(70, 22));
+        setAnnualTax.setRequestFocusEnabled(false);
+        getContentPane().add(setAnnualTax, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 230, -1, -1));
+
+        epf.setMinimumSize(new java.awt.Dimension(70, 22));
+        epf.setPreferredSize(new java.awt.Dimension(70, 22));
+        epf.setRequestFocusEnabled(false);
+        getContentPane().add(epf, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 130, -1, -1));
 
         jLabel10.setIcon(new javax.swing.ImageIcon("C:\\images\\veva_background.jpeg")); // NOI18N
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -4, 450, 350));
@@ -162,7 +168,7 @@ public class Update_Payroll extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         this.dispose();
-        previousWindow.setVisible(false);
+        previousWindow.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void searchDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchDetailsActionPerformed
@@ -219,8 +225,8 @@ public class Update_Payroll extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextPane eis;
-    private javax.swing.JTextPane epf;
+    private javax.swing.JTextField eis;
+    private javax.swing.JTextField epf;
     private javax.swing.JTextField getUsername;
     private javax.swing.JTextField grossSalary;
     private javax.swing.JButton jButton1;
@@ -240,9 +246,9 @@ public class Update_Payroll extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JButton searchDetails;
-    private javax.swing.JTextPane setAnnualTax;
+    private javax.swing.JTextField setAnnualTax;
     private javax.swing.JSpinner setMonth;
-    private javax.swing.JTextPane socso;
+    private javax.swing.JTextField socso;
     private javax.swing.JButton updateDetails;
     // End of variables declaration//GEN-END:variables
 }
